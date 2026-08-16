@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Repository herunterladen
+        uses: actions/checkout@v4
+
       - name: Python installieren
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Test ausführen
-        run: python -c "print('Hallo! GitHub Actions funktioniert!')"
+      - name: Mediathek Monitor starten
+        run: python monitor.py
