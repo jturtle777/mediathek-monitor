@@ -22,7 +22,6 @@ query = {
 }
 
 
-# Sender, die wir zunächst berücksichtigen wollen
 allowed_channels = {
     "ARD",
     "BR",
@@ -43,6 +42,11 @@ allowed_channels = {
 
 
 try:
+
+    # ----------------------------------------
+    # Daten von MediathekViewWeb holen
+    # ----------------------------------------
+
     data = json.dumps(query).encode("utf-8")
 
     request = urllib.request.Request(
@@ -62,6 +66,11 @@ try:
     print("Verbindung erfolgreich!")
     print()
 
+
+    # ----------------------------------------
+    # Erste Filterung
+    # ----------------------------------------
+
     candidates = []
 
     for film in results:
@@ -69,11 +78,11 @@ try:
         title = film.get("title", "")
         channel = film.get("channel", "")
 
-        # Nur unsere gewünschten Sender
+        # Nur gewünschte Sender
         if channel not in allowed_channels:
             continue
 
-        # Audiodeskription nicht berücksichtigen
+        # Audiodeskription entfernen
         if "audiodeskription" in title.lower():
             continue
 
@@ -84,7 +93,38 @@ try:
     print(f"Film-Kandidaten nach Filter: {len(candidates)}")
     print()
 
-    for number, film in enumerate(candidates, start=1):
+
+    # ----------------------------------------
+    # Dubletten anhand des Mediathek-Links
+    # ----------------------------------------
+
+    unique_films = {}
+
+    for film in candidates:
+
+        website = film.get("url_website", "")
+
+        # Falls kein Link vorhanden ist,
+        # benutzen wir zur Sicherheit die ID
+        if not website:
+            website = film.get("id", "")
+
+        if website not in unique_films:
+            unique_films[website] = film
+
+
+    unique_films = list(unique_films.values())
+
+
+    print(f"Nach Entfernen von Dubletten: {len(unique_films)}")
+    print()
+
+
+    # ----------------------------------------
+    # Ergebnisse anzeigen
+    # ----------------------------------------
+
+    for number, film in enumerate(unique_films, start=1):
 
         title = film.get("title", "Unbekannt")
         channel = film.get("channel", "Unbekannt")
@@ -96,9 +136,12 @@ try:
         minutes = round(duration / 60)
 
         if timestamp:
-            date = datetime.fromtimestamp(timestamp).strftime("%d.%m.%Y")
+            date = datetime.fromtimestamp(
+                timestamp
+            ).strftime("%d.%m.%Y")
         else:
             date = "Unbekannt"
+
 
         print(f"{number}. {title}")
         print(f"   Sender: {channel}")
@@ -110,6 +153,7 @@ try:
 
 
 except Exception as e:
+
     print("FEHLER:")
     print(e)
 
