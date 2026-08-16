@@ -1,1 +1,122 @@
-{}
+{
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8zMGQ5ZThmYi1jMGMzLTQ5MGUtOWNkMS1mNmM5NzEyYjgxMjM": {
+    "title": "Istrien – Kroatiens überraschende Halbinsel",
+    "channel": "MDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzE5NjI3MzE3NF9nYW56ZVNlbmR1bmc": {
+    "title": "Söhne Rostocks",
+    "channel": "NDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLWQyNDEwN2Q2LWRiOGMtNGM5YS05NDgzLTZjNDEyYzIxNzA1OA": {
+    "title": "Schmale Schultern (2009)",
+    "channel": "WDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvNDkxZjc3ZWMtMmY2Yi00OGZkLWI5YjktNGE1MmRlMmQzNWIy": {
+    "title": "Schwimm-EM - die Spät-Session am Sonntag",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy9jYTU1Mzk5NC1kMzc1LTQzMzAtYjViNi0wOTZjMjA1OTYzMmI": {
+    "title": "Sommer im Erzgebirge",
+    "channel": "MDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2xpZWJlLWFtLWZqb3JkLzIwMjQtMDgtMjVfMTQtMDMtTUVTWg": {
+    "title": "Zwei Sommer – Liebe am Fjord",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2tsYXJhLXNvbm50YWcvMjAyNS0wNi0xNF8xNC0wMC1NRVNa": {
+    "title": "Kleine Fische, große Fische – Klara Sonntag",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdf.de/video/shows/zdf-fernsehgarten-104/260816-sendung-fsg-100": {
+    "title": "Italoschlager (S2026/E15)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdf.de/video/shows/bares-fuer-rares-lieblingsstuecke-100/bares-fuer-rares---lieblingsstuecke-vom-16-august-2026-102": {
+    "title": "Nächster Halt: Händlerraum! - Lieblingsstücke vom 16. August 2026 (S2026/E125)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtNDdkNDY2YTYtNDhjMi00OTUzLTg2ZWItMjcyYWYwNGY5NjZj": {
+    "title": "Talk mit Mareile Höppner und Martina und Moritz",
+    "channel": "WDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci16dWVyaWNoIGtyaW1pLzIwMjQtMDYtMjVfMjEtNDUtTUVTWg": {
+    "title": "Borchert und der Tote im See (S01/E09)",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2tvbW1pc3Nhci12YW4tZGVyLXZhbGsvMjAyNS0wMy0yOV8wMy0wMC1NRVo": {
+    "title": "Duell in Amsterdam | Kommissar Van der Valk (S01/E01)",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxN1dPMDAyMDIyQTA": {
+    "title": "Die vier Musketiere (Originalversion)",
+    "channel": "BR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzhkNTU1YjBiLTU3OGYtNGY2Yi1hNWVmLTRjY2Q5YTA2NzZhMF9nYW56ZVNlbmR1bmc": {
+    "title": "Tod im Fiaker – Der Wien-Krimi: Blind ermittelt",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdfheute.de/sport/juergen-klopp-medienschelte-pressekonferenz-bundestrainer-100.html": {
+    "title": "Medienschelte? Jürgen Klopp räumt Fehler ein",
+    "channel": "ZDF",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdf.de/video/filme/challengers---rivalen-movie-100/challengers---rivalen-100": {
+    "title": "Challengers - Rivalen",
+    "channel": "ZDFneo",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9kZDJhZTg3Ni1lNzI3LTRlZWMtYjZlNy1jNmViNWNjYTliZWQ": {
+    "title": "Gefragt-Gejagt XXL vom 15.08.2026",
+    "channel": "NDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxN1dPMDAyMDIwQTA": {
+    "title": "Die drei Musketiere",
+    "channel": "BR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdf.de/video/livestreams/leichtathletik-live-livestream-ergebnisse-zeitplan-100/sportstudio-live-15-august-abends-leichtathletik-em-schwimm-em-reit-wm-turn-em-100": {
+    "title": "Turn-EM, Schwimm-EM, Leichtathletik-EM, Reit-WM - Leichtathletik-EM 2026",
+    "channel": "ZDF",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.zdf.de/video/re-live/dokus-hintergruende-videos-100/reiten-wm-dressur-grand-prix-aachen-15-august-2026-100": {
+    "title": "Reit-WM 2026 in Aachen: Dressur Grand Prix - Sport allgemein",
+    "channel": "ZDF",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvZmYxMTU3NTctMjA5Zi00MjhhLWJmZDctYzBiMDFiNWQ3YmU1": {
+    "title": "Frankfurt Galaxy gegen Munich Ravens",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy80OGY5OTE5My01MDgyLTRjYmYtYWUwOC0zODY2YTE3M2UzY2I": {
+    "title": "Sport im Osten 16:55 Uhr vom 15. August",
+    "channel": "MDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8yYmYyZDc2Yy01M2QyLTQ3ODctYWEwOS02MTllODA5MjZjYjQ": {
+    "title": "SPORT IM OSTEN: Chemnitzer FC vs. Erzgebirge Aue",
+    "channel": "MDR",
+    "first_seen": "2026-08-16"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvNTRlMzgxNjgtZGE1OS00YjQyLWI1YzYtOWVkOTRmNjkyYTlm": {
+    "title": "SV Elversberg gegen FC Lorient",
+    "channel": "ARD",
+    "first_seen": "2026-08-16"
+  }
+}
