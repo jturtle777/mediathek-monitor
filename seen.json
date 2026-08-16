@@ -118,5 +118,80 @@
     "title": "SV Elversberg gegen FC Lorient",
     "channel": "ARD",
     "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335378/tatort-wehrlos": {
+    "title": "Tatort: Wehrlos",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335348/fussball-am-sonntag": {
+    "title": "Fußball am Sonntag",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335384/live-is-life-der-himmel-soll-warten": {
+    "title": "Live is Life - Der Himmel soll warten",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335391/fussball-frauen-bundesliga-sturm-graz-red-bull-salzburg-aus-graz": {
+    "title": "Fußball Frauen Bundesliga: Sturm Graz - Red Bull Salzburg aus Graz",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335383/live-is-life": {
+    "title": "Live is life",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335392/beachvolleyball-em-2026-finale-damen-und-herren-aus-stare-jablonki-in-voller-laenge": {
+    "title": "Beachvolleyball-EM 2026: Finale Damen und Herren aus Stare Jablonki (in voller Länge)",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335390/fussball-2-liga-first-vienna-1894-liefering-aus-wien": {
+    "title": "Fußball 2. Liga: First Vienna 1894 - Liefering aus Wien",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335409/schwimm-em-paris-2026-schwimmen-vorlauf-tag-7-in-voller-laenge": {
+    "title": "Schwimm-EM Paris 2026: Schwimmen Vorlauf Tag 7 (in voller Länge)",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335359/kulturmatinee": {
+    "title": "kulturMATINEE",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335343/leichtathletik-em-2026-birmingham-tag-7-marathon": {
+    "title": "Leichtathletik-EM 2026 Birmingham: Tag 7 Marathon",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335295/world-judo-tour-2026-grand-prix-lima-tag-2": {
+    "title": "World Judo Tour 2026: Grand Prix Lima - Tag 2",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335293/leichtathletik-em-birmingham-2026-tag-6-abend": {
+    "title": "Leichtathletik-EM Birmingham 2026: Tag 6 - Abend",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335302/leichtathletik-em-birmingham-2026-tag-6-abend-in-voller-laenge": {
+    "title": "Leichtathletik-EM Birmingham 2026: Tag 6 - Abend (in voller Länge)",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335258/unter-anderen-umstaenden-nordwind": {
+    "title": "Unter anderen Umständen - Nordwind",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
+  },
+  "https://on.orf.at/video/14335292/schwimm-em-paris-2026-schwimmen-tag-6": {
+    "title": "Schwimm-EM Paris 2026: Schwimmen Tag 6",
+    "channel": "ORF",
+    "first_seen": "2026-08-16"
   }
 }
