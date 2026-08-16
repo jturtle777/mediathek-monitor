@@ -1,0 +1,17 @@
+name: Mediathek Monitor
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Python installieren
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test ausführen
+        run: python -c "print('Hallo! GitHub Actions funktioniert!')"
