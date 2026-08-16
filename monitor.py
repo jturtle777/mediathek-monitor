@@ -41,10 +41,28 @@ allowed_channels = {
 }
 
 
+# ----------------------------------------
+# Gespeicherte Filme laden
+# ----------------------------------------
+
+try:
+
+    with open("seen.json", "r", encoding="utf-8") as file:
+        seen = json.load(file)
+
+except FileNotFoundError:
+
+    seen = {}
+
+
+print(f"Bereits bekannte Filme: {len(seen)}")
+print()
+
+
 try:
 
     # ----------------------------------------
-    # Daten von MediathekViewWeb holen
+    # MediathekViewWeb abfragen
     # ----------------------------------------
 
     data = json.dumps(query).encode("utf-8")
@@ -78,11 +96,9 @@ try:
         title = film.get("title", "")
         channel = film.get("channel", "")
 
-        # Nur gewünschte Sender
         if channel not in allowed_channels:
             continue
 
-        # Audiodeskription entfernen
         if "audiodeskription" in title.lower():
             continue
 
@@ -91,11 +107,10 @@ try:
 
     print(f"API-Ergebnisse: {len(results)}")
     print(f"Film-Kandidaten nach Filter: {len(candidates)}")
-    print()
 
 
     # ----------------------------------------
-    # Dubletten anhand des Mediathek-Links
+    # Dubletten entfernen
     # ----------------------------------------
 
     unique_films = {}
@@ -104,8 +119,6 @@ try:
 
         website = film.get("url_website", "")
 
-        # Falls kein Link vorhanden ist,
-        # benutzen wir zur Sicherheit die ID
         if not website:
             website = film.get("id", "")
 
@@ -115,41 +128,113 @@ try:
 
     unique_films = list(unique_films.values())
 
-
     print(f"Nach Entfernen von Dubletten: {len(unique_films)}")
     print()
 
 
     # ----------------------------------------
-    # Ergebnisse anzeigen
+    # Neue Filme erkennen
     # ----------------------------------------
 
-    for number, film in enumerate(unique_films, start=1):
+    new_films = []
 
-        title = film.get("title", "Unbekannt")
-        channel = film.get("channel", "Unbekannt")
-        duration = film.get("duration", 0)
-        timestamp = film.get("timestamp")
+    for film in unique_films:
+
         website = film.get("url_website", "")
-        film_id = film.get("id", "")
 
-        minutes = round(duration / 60)
+        if not website:
+            website = film.get("id", "")
 
-        if timestamp:
-            date = datetime.fromtimestamp(
-                timestamp
-            ).strftime("%d.%m.%Y")
-        else:
-            date = "Unbekannt"
+        if website not in seen:
+
+            new_films.append(film)
 
 
-        print(f"{number}. {title}")
-        print(f"   Sender: {channel}")
-        print(f"   Dauer: {minutes} Minuten")
-        print(f"   Datum: {date}")
-        print(f"   ID: {film_id}")
-        print(f"   Link: {website}")
-        print()
+    print(f"NEUE Filme: {len(new_films)}")
+    print()
+
+
+    # ----------------------------------------
+    # Neue Filme anzeigen
+    # ----------------------------------------
+
+    if new_films:
+
+        for number, film in enumerate(new_films, start=1):
+
+            title = film.get("title", "Unbekannt")
+            channel = film.get("channel", "Unbekannt")
+            duration = film.get("duration", 0)
+            timestamp = film.get("timestamp")
+            website = film.get("url_website", "")
+
+            minutes = round(duration / 60)
+
+            if timestamp:
+
+                date = datetime.fromtimestamp(
+                    timestamp
+                ).strftime("%d.%m.%Y")
+
+            else:
+
+                date = "Unbekannt"
+
+
+            print(f"{number}. {title}")
+            print(f"   Sender: {channel}")
+            print(f"   Dauer: {minutes} Minuten")
+            print(f"   Datum: {date}")
+            print(f"   Link: {website}")
+            print()
+
+
+    else:
+
+        print("Keine neuen Filme gefunden.")
+
+
+    # ----------------------------------------
+    # Neue Filme speichern
+    # ----------------------------------------
+
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    for film in new_films:
+
+        website = film.get("url_website", "")
+
+        if not website:
+            website = film.get("id", "")
+
+        seen[website] = {
+            "title": film.get("title", ""),
+            "channel": film.get("channel", ""),
+            "first_seen": today
+        }
+
+
+    # ----------------------------------------
+    # seen.json speichern
+    # ----------------------------------------
+
+    with open(
+        "seen.json",
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            seen,
+            file,
+            indent=2,
+            ensure_ascii=False
+        )
+
+
+    print("----------------------------------------")
+    print(f"Gespeicherte Filme insgesamt: {len(seen)}")
+    print("----------------------------------------")
 
 
 except Exception as e:
