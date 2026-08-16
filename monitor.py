@@ -1,0 +1,6 @@
+print("========================================")
+print("Mediathek Monitor")
+print("========================================")
+print("GitHub Actions funktioniert!")
+print("Das Python-Programm wurde erfolgreich ausgeführt.")
+print("========================================")
