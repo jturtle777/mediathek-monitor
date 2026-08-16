@@ -22,6 +22,26 @@ query = {
 }
 
 
+# Sender, die wir zunächst berücksichtigen wollen
+allowed_channels = {
+    "ARD",
+    "BR",
+    "HR",
+    "MDR",
+    "NDR",
+    "RB",
+    "RBB",
+    "SWR",
+    "WDR",
+    "SR",
+    "ONE",
+    "ZDF",
+    "ZDFneo",
+    "ZDFinfo",
+    "3sat"
+}
+
+
 try:
     data = json.dumps(query).encode("utf-8")
 
@@ -41,10 +61,30 @@ try:
 
     print("Verbindung erfolgreich!")
     print()
-    print(f"Gefundene Kandidaten: {len(results)}")
+
+    candidates = []
+
+    for film in results:
+
+        title = film.get("title", "")
+        channel = film.get("channel", "")
+
+        # Nur unsere gewünschten Sender
+        if channel not in allowed_channels:
+            continue
+
+        # Audiodeskription nicht berücksichtigen
+        if "audiodeskription" in title.lower():
+            continue
+
+        candidates.append(film)
+
+
+    print(f"API-Ergebnisse: {len(results)}")
+    print(f"Film-Kandidaten nach Filter: {len(candidates)}")
     print()
 
-    for number, film in enumerate(results, start=1):
+    for number, film in enumerate(candidates, start=1):
 
         title = film.get("title", "Unbekannt")
         channel = film.get("channel", "Unbekannt")
@@ -67,6 +107,7 @@ try:
         print(f"   ID: {film_id}")
         print(f"   Link: {website}")
         print()
+
 
 except Exception as e:
     print("FEHLER:")
