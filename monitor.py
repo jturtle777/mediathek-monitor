@@ -13,9 +13,12 @@ url = "https://mediathekviewweb.de/api/query"
 
 query = {
     "queries": [],
-    "sortBy": "filmlisteTimestamp",
+    "sortBy": "timestamp",
     "sortOrder": "desc",
-    "size": 20
+    "future": False,
+    "offset": 0,
+    "size": 100,
+    "duration_min": 70 * 60
 }
 
 
@@ -38,7 +41,7 @@ try:
 
     print("Verbindung erfolgreich!")
     print()
-    print(f"Gefundene Einträge: {len(results)}")
+    print(f"Gefundene Kandidaten: {len(results)}")
     print()
 
     for number, film in enumerate(results, start=1):
@@ -47,7 +50,8 @@ try:
         channel = film.get("channel", "Unbekannt")
         duration = film.get("duration", 0)
         timestamp = film.get("timestamp")
-        film_timestamp = film.get("filmlisteTimestamp")
+        website = film.get("url_website", "")
+        film_id = film.get("id", "")
 
         minutes = round(duration / 60)
 
@@ -56,18 +60,12 @@ try:
         else:
             date = "Unbekannt"
 
-        if film_timestamp:
-            film_date = datetime.fromtimestamp(
-                film_timestamp
-            ).strftime("%d.%m.%Y %H:%M")
-        else:
-            film_date = "Unbekannt"
-
         print(f"{number}. {title}")
         print(f"   Sender: {channel}")
         print(f"   Dauer: {minutes} Minuten")
-        print(f"   Inhaltsdatum: {date}")
-        print(f"   Filmliste: {film_date}")
+        print(f"   Datum: {date}")
+        print(f"   ID: {film_id}")
+        print(f"   Link: {website}")
         print()
 
 except Exception as e:
