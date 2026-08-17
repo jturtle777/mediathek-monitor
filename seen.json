@@ -1,2 +1,107 @@
-
-{}
+{
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNVdPMDA4MDUzQTA": {
+    "title": "Südsee",
+    "channel": "BR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzEwMDU1OTIwMV9nYW56ZVNlbmR1bmc": {
+    "title": "Ein Engel schlägt zurück",
+    "channel": "NDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzI5NmQ0YWZlLTE0MDctNDc0MC1hYWNhLWFmYzVjOTkxYTU4NV9nYW56ZVNlbmR1bmc": {
+    "title": "Der Buchspazierer",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80NjE1ODktNDQyMDIy": {
+    "title": "Fehlschuss",
+    "channel": "MDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNDQyNzE": {
+    "title": "Landesschau Baden-Württemberg vom 17.8.2026",
+    "channel": "SWR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl83ZWM0Y2Y4Ny00YjllLTQ5NGUtODM5Zi01YzEyN2QzZjI1YzlfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 17.08.2026",
+    "channel": "RBB",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0wNy0wM18wMi0wMC1NRVNa": {
+    "title": "Das Glück kommt unverhofft",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0wMS0wNl8xNC0wNS1NRVo": {
+    "title": "Weniger ist mehr",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNC0wMy0yOV8xNS0yMC1NRVo": {
+    "title": "Lindburgs Fall",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzdmZjFkNDNiLTczYjQtNDI4NS05NmFmLTcyMjUzOGM4OTVmZl9nYW56ZVNlbmR1bmc": {
+    "title": "Vorübergehend glücklich - Opimaral",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzM1NWRhMGYwLTZkYmItNGRkNy04NjFjLWQyZmZmNjczODhhMV9nYW56ZVNlbmR1bmc": {
+    "title": "Vorübergehend glücklich - Vredenhorst",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-17-august-2026-mit-dietrich-groenemeyer-100": {
+    "title": "Volle Kanne vom 17. August 2026 (S2026/E153)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzQwOTA0NzJlLWM3YmItNGVjNi1hOTBmLTIyMzZiNjE4ZDdjNl9nYW56ZVNlbmR1bmc": {
+    "title": "Der Rosengarten von Madame Vernet",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvc3BvcnRzY2hhdV9mbS12aWRlb29iamVjdC1XRFItc29waG9yYS1iYTIzNzc0Yi0wMDliLTRjMTEtOGFkMS0xZTBmYjFkNmVhNDA": {
+    "title": "Der Team-Wettbewerb der Voltigierer - Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8xOGM2MTM3ZC02OWJjLTRhZTItOTlkNi00YzlkODlmMjBmNDg": {
+    "title": "Der Störenfried: Ermittlungen zu Oskar Brüsewitz",
+    "channel": "MDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzhkMjRjMDE1LTRkYzAtNGNiZi1iNDMwLTM1MjM1Mzc2YzUzNF9nYW56ZVNlbmR1bmc": {
+    "title": "Die Klapperschlange",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvc3BvcnRzY2hhdV9mbS12aWRlb29iamVjdC1XRFItc29waG9yYS0wNDBiZjYxYy0xZDAwLTQxNTQtYTBkMC0xNTY1ZWU4NGZmOGE": {
+    "title": "Vielseitigkeits-Springreiten - Teil eins im Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLWQyNDEwN2Q2LWRiOGMtNGM5YS05NDgzLTZjNDEyYzIxNzA1OA": {
+    "title": "Schmale Schultern (2009)",
+    "channel": "WDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8zMGQ5ZThmYi1jMGMzLTQ5MGUtOWNkMS1mNmM5NzEyYjgxMjM": {
+    "title": "Istrien – Kroatiens überraschende Halbinsel",
+    "channel": "MDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzE5NjI3MzE3NF9nYW56ZVNlbmR1bmc": {
+    "title": "Söhne Rostocks",
+    "channel": "NDR",
+    "first_seen": "2026-08-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLTA2NGMwZTkxLTEwMzMtNDhiZS1hNDE5LWI5NTQ4ZDE1MmExZA": {
+    "title": "Schmale Schultern (2009) (klare Sprache)",
+    "channel": "WDR",
+    "first_seen": "2026-08-17"
+  }
+}
