@@ -26,7 +26,7 @@ MAX_DURATION = 180
 MIN_TMDB_RATING = 6.5
 
 # Mindestanzahl Bewertungen bei TMDB
-MIN_TMDB_VOTES = 1000
+MIN_TMDB_VOTES = 30
 
 
 # ========================================
