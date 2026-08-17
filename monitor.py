@@ -1,5 +1,7 @@
 import urllib.request
+import urllib.parse
 import json
+import os
 from datetime import datetime
 
 
@@ -30,6 +32,19 @@ ALLOWED_CHANNELS = {
     "ZDFinfo",
     "3sat"
 }
+
+
+# ========================================
+# TMDB
+# ========================================
+
+TMDB_API_TOKEN = os.environ.get(
+    "TMDB_API_TOKEN"
+)
+
+TMDB_API_URL = (
+    "https://api.themoviedb.org/3/search/multi"
+)
 
 
 # ========================================
@@ -153,7 +168,27 @@ print()
 
 
 # ========================================
-# API
+# TMDB STATUS
+# ========================================
+
+if TMDB_API_TOKEN:
+
+    print("TMDB API: Token vorhanden")
+
+else:
+
+    print("TMDB API: KEIN TOKEN GEFUNDEN")
+
+    print(
+        "Bitte das GitHub Secret "
+        "'TMDB_API_TOKEN' einrichten."
+    )
+
+print()
+
+
+# ========================================
+# API MEDIATHEKVIEWWEB
 # ========================================
 
 url = "https://mediathekviewweb.de/api/query"
@@ -212,11 +247,195 @@ stats = {
 }
 
 
+# ========================================
+# TMDB-FUNKTION
+# ========================================
+
+def search_tmdb(title):
+
+    """
+    Sucht einen Titel bei TMDB.
+
+    Rückgabe:
+
+    {
+        "title": ...,
+        "year": ...,
+        "rating": ...,
+        "votes": ...,
+        "media_type": ...
+    }
+
+    oder None, wenn nichts gefunden wurde.
+    """
+
+    if not TMDB_API_TOKEN:
+
+        return None
+
+
+    try:
+
+        # TMDB kann mit deutschen Titeln
+        # teilweise gut umgehen.
+        params = urllib.parse.urlencode({
+
+            "query": title,
+
+            "language": "de-DE",
+
+            "include_adult": "false",
+
+            "page": 1
+
+        })
+
+
+        request_url = (
+            TMDB_API_URL
+            + "?"
+            + params
+        )
+
+
+        request = urllib.request.Request(
+
+            request_url,
+
+            headers={
+
+                "Authorization":
+                    f"Bearer {TMDB_API_TOKEN}",
+
+                "Accept":
+                    "application/json"
+
+            },
+
+            method="GET"
+        )
+
+
+        with urllib.request.urlopen(
+            request,
+            timeout=20
+        ) as response:
+
+            data = json.loads(
+                response.read().decode(
+                    "utf-8"
+                )
+            )
+
+
+        results = data.get(
+            "results",
+            []
+        )
+
+
+        if not results:
+
+            return None
+
+
+        # Wir interessieren uns zunächst
+        # hauptsächlich für Filme.
+        #
+        # TMDB liefert bei /search/multi
+        # auch Serien und Personen.
+        #
+        # Deshalb suchen wir zuerst einen Film.
+
+        movie_results = [
+
+            item
+
+            for item in results
+
+            if item.get(
+                "media_type"
+            ) == "movie"
+
+        ]
+
+
+        if not movie_results:
+
+            return None
+
+
+        # Der erste Treffer ist zunächst
+        # unser bester Treffer.
+        movie = movie_results[0]
+
+
+        release_date = movie.get(
+            "release_date",
+            ""
+        )
+
+
+        year = ""
+
+        if release_date:
+
+            year = release_date[:4]
+
+
+        rating = movie.get(
+            "vote_average"
+        )
+
+
+        votes = movie.get(
+            "vote_count",
+            0
+        )
+
+
+        return {
+
+            "title": movie.get(
+                "title",
+                ""
+            ),
+
+            "original_title":
+                movie.get(
+                    "original_title",
+                    ""
+                ),
+
+            "year": year,
+
+            "rating": rating,
+
+            "votes": votes,
+
+            "media_type": "movie"
+
+        }
+
+
+    except Exception as e:
+
+        print(
+            f"   TMDB Fehler: {e}"
+        )
+
+        return None
+
+
+# ========================================
+# HAUPTPROGRAMM
+# ========================================
+
 try:
 
-    # ========================================
-    # API ABFRAGEN
-    # ========================================
+    # ====================================
+    # MEDIATHEKVIEWWEB ABFRAGEN
+    # ====================================
 
     data = json.dumps(
         query
@@ -230,7 +449,8 @@ try:
         data=data,
 
         headers={
-            "Content-Type": "application/json"
+            "Content-Type":
+                "application/json"
         },
 
         method="POST"
@@ -256,13 +476,16 @@ try:
     ]
 
 
-    print("Verbindung erfolgreich!")
+    print(
+        "Verbindung erfolgreich!"
+    )
+
     print()
 
 
-    # ========================================
+    # ====================================
     # FILTER
-    # ========================================
+    # ====================================
 
     candidates = []
 
@@ -303,9 +526,9 @@ try:
         )
 
 
-        # ------------------------------------
+        # --------------------------------
         # SENDER
-        # ------------------------------------
+        # --------------------------------
 
         if channel not in ALLOWED_CHANNELS:
 
@@ -316,9 +539,9 @@ try:
             continue
 
 
-        # ------------------------------------
+        # --------------------------------
         # DAUER
-        # ------------------------------------
+        # --------------------------------
 
         duration_minutes = (
             duration / 60
@@ -343,9 +566,9 @@ try:
             continue
 
 
-        # ------------------------------------
+        # --------------------------------
         # AUDIODESKRIPTION
-        # ------------------------------------
+        # --------------------------------
 
         if "audiodeskription" in text:
 
@@ -356,9 +579,9 @@ try:
             continue
 
 
-        # ------------------------------------
+        # --------------------------------
         # AUSSCHLUSSWÖRTER
-        # ------------------------------------
+        # --------------------------------
 
         excluded = False
 
@@ -381,9 +604,9 @@ try:
             continue
 
 
-        # ------------------------------------
+        # --------------------------------
         # SERIEN
-        # ------------------------------------
+        # --------------------------------
 
         is_series = False
 
@@ -406,9 +629,9 @@ try:
             continue
 
 
-        # ------------------------------------
+        # --------------------------------
         # DOKUMENTATION
-        # ------------------------------------
+        # --------------------------------
 
         is_documentary = False
 
@@ -431,18 +654,18 @@ try:
             continue
 
 
-        # ------------------------------------
-        # FILM KANDIDAT
-        # ------------------------------------
+        # --------------------------------
+        # FILM-KANDIDAT
+        # --------------------------------
 
         candidates.append(
             film
         )
 
 
-    # ========================================
+    # ====================================
     # STATISTIK
-    # ========================================
+    # ====================================
 
     print(
         f"API-Ergebnisse: {len(results)}"
@@ -495,9 +718,9 @@ try:
     print()
 
 
-    # ========================================
+    # ====================================
     # DUBLETTEN
-    # ========================================
+    # ====================================
 
     unique_films = {}
 
@@ -538,9 +761,9 @@ try:
     print()
 
 
-    # ========================================
+    # ====================================
     # NEUE FILME
-    # ========================================
+    # ====================================
 
     new_films = []
 
@@ -575,11 +798,161 @@ try:
     print()
 
 
-    # ========================================
-    # FILME AUSGEBEN
-    # ========================================
+    # ====================================
+    # TMDB-BEWERTUNGEN
+    # ====================================
 
     if new_films:
+
+        print(
+            "========================================"
+        )
+
+        print(
+            "TMDB-BEWERTUNGEN"
+        )
+
+        print(
+            "========================================"
+        )
+
+        print()
+
+
+        if not TMDB_API_TOKEN:
+
+            print(
+                "TMDB wird übersprungen, "
+                "da kein API Token vorhanden ist."
+            )
+
+            print()
+
+        else:
+
+            for number, film in enumerate(
+                new_films,
+                start=1
+            ):
+
+                title = film.get(
+                    "title",
+                    "Unbekannt"
+                )
+
+
+                print(
+                    f"{number}. {title}"
+                )
+
+                print(
+                    "   Suche bei TMDB..."
+                )
+
+
+                tmdb = search_tmdb(
+                    title
+                )
+
+
+                if tmdb:
+
+                    rating = tmdb.get(
+                        "rating"
+                    )
+
+                    votes = tmdb.get(
+                        "votes",
+                        0
+                    )
+
+                    tmdb_title = tmdb.get(
+                        "title",
+                        ""
+                    )
+
+                    year = tmdb.get(
+                        "year",
+                        ""
+                    )
+
+
+                    if rating is not None:
+
+                        rating_display = (
+                            f"{rating:.1f}"
+                        )
+
+                    else:
+
+                        rating_display = (
+                            "keine Bewertung"
+                        )
+
+
+                    print(
+                        f"   TMDB: "
+                        f"{tmdb_title}"
+                    )
+
+                    if year:
+
+                        print(
+                            f"   Jahr: "
+                            f"{year}"
+                        )
+
+
+                    print(
+                        f"   Bewertung: "
+                        f"{rating_display}"
+                    )
+
+                    print(
+                        f"   Stimmen: "
+                        f"{votes}"
+                    )
+
+                else:
+
+                    print(
+                        "   TMDB: "
+                        "kein passender Film gefunden"
+                    )
+
+
+                print()
+
+
+    else:
+
+        print(
+            "Keine neuen Filme gefunden."
+        )
+
+        print()
+
+
+    # ====================================
+    # FILME AUSGEBEN
+    # ====================================
+
+    if new_films:
+
+        print(
+            "========================================"
+        )
+
+        print(
+            "NEUE FILME"
+        )
+
+        print(
+            "========================================"
+        )
+
+        print()
+
 
         for number, film in enumerate(
             new_films,
@@ -652,16 +1025,9 @@ try:
             print()
 
 
-    else:
-
-        print(
-            "Keine neuen Filme gefunden."
-        )
-
-
-    # ========================================
+    # ====================================
     # SPEICHERN
-    # ========================================
+    # ====================================
 
     today = datetime.now().strftime(
         "%Y-%m-%d"
@@ -703,9 +1069,9 @@ try:
         }
 
 
-    # ========================================
+    # ====================================
     # seen.json
-    # ========================================
+    # ====================================
 
     with open(
         "seen.json",
