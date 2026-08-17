@@ -13,8 +13,21 @@ MIN_DURATION = 70
 MAX_DURATION = 180
 
 
-# Nur Sender, deren Inhalte in Deutschland
-# grundsätzlich verfügbar sein sollen.
+# ========================================
+# TMDB FILTER
+# ========================================
+
+# Mindestbewertung bei TMDB
+MIN_TMDB_RATING = 6.5
+
+# Mindestanzahl Bewertungen bei TMDB
+MIN_TMDB_VOTES = 1000
+
+
+# ========================================
+# ERLAUBTE SENDER
+# ========================================
+
 ALLOWED_CHANNELS = {
     "ARD",
     "BR",
@@ -32,19 +45,6 @@ ALLOWED_CHANNELS = {
     "ZDFinfo",
     "3sat"
 }
-
-
-# ========================================
-# TMDB
-# ========================================
-
-TMDB_API_TOKEN = os.environ.get(
-    "TMDB_API_TOKEN"
-)
-
-TMDB_API_URL = (
-    "https://api.themoviedb.org/3/search/multi"
-)
 
 
 # ========================================
@@ -79,7 +79,7 @@ EXCLUDE_KEYWORDS = [
     "fernsehgarten",
     "lieblingsstücke",
 
-    # Sport allgemein
+    # Sport
     "sport",
     "fußball",
     "fussball",
@@ -157,6 +157,19 @@ DOCUMENTARY_KEYWORDS = [
 
 
 # ========================================
+# TMDB
+# ========================================
+
+TMDB_API_TOKEN = os.environ.get(
+    "TMDB_API_TOKEN"
+)
+
+TMDB_API_URL = (
+    "https://api.themoviedb.org/3/search/multi"
+)
+
+
+# ========================================
 # PROGRAMMSTART
 # ========================================
 
@@ -188,7 +201,7 @@ print()
 
 
 # ========================================
-# API MEDIATHEKVIEWWEB
+# MEDIATHEKVIEWWEB API
 # ========================================
 
 url = "https://mediathekviewweb.de/api/query"
@@ -262,11 +275,10 @@ def search_tmdb(title):
         "title": ...,
         "year": ...,
         "rating": ...,
-        "votes": ...,
-        "media_type": ...
+        "votes": ...
     }
 
-    oder None, wenn nichts gefunden wurde.
+    oder None.
     """
 
     if not TMDB_API_TOKEN:
@@ -276,8 +288,6 @@ def search_tmdb(title):
 
     try:
 
-        # TMDB kann mit deutschen Titeln
-        # teilweise gut umgehen.
         params = urllib.parse.urlencode({
 
             "query": title,
@@ -339,14 +349,7 @@ def search_tmdb(title):
             return None
 
 
-        # Wir interessieren uns zunächst
-        # hauptsächlich für Filme.
-        #
-        # TMDB liefert bei /search/multi
-        # auch Serien und Personen.
-        #
-        # Deshalb suchen wir zuerst einen Film.
-
+        # Nur Filme berücksichtigen
         movie_results = [
 
             item
@@ -365,8 +368,6 @@ def search_tmdb(title):
             return None
 
 
-        # Der erste Treffer ist zunächst
-        # unser bester Treffer.
         movie = movie_results[0]
 
 
@@ -411,9 +412,7 @@ def search_tmdb(title):
 
             "rating": rating,
 
-            "votes": votes,
-
-            "media_type": "movie"
+            "votes": votes
 
         }
 
@@ -484,7 +483,7 @@ try:
 
 
     # ====================================
-    # FILTER
+    # MEDIATHEK-FILTER
     # ====================================
 
     candidates = []
@@ -654,10 +653,6 @@ try:
             continue
 
 
-        # --------------------------------
-        # FILM-KANDIDAT
-        # --------------------------------
-
         candidates.append(
             film
         )
@@ -792,24 +787,41 @@ try:
 
 
     print(
-        f"NEUE Filme: {len(new_films)}"
+        f"NEUE Filme vor TMDB-Filter: "
+        f"{len(new_films)}"
     )
 
     print()
 
 
     # ====================================
-    # TMDB-BEWERTUNGEN
+    # TMDB FILTER
     # ====================================
 
-    if new_films:
+    interesting_films = []
+
+
+    tmdb_stats = {
+
+        "kein_treffer": 0,
+
+        "bewertung_zu_niedrig": 0,
+
+        "zu_wenig_stimmen": 0,
+
+        "erfüllt_beide_kriterien": 0
+
+    }
+
+
+    if new_films and TMDB_API_TOKEN:
 
         print(
             "========================================"
         )
 
         print(
-            "TMDB-BEWERTUNGEN"
+            "TMDB-PRÜFUNG"
         )
 
         print(
@@ -818,144 +830,255 @@ try:
 
         print()
 
+        print(
+            f"Mindestbewertung: "
+            f"{MIN_TMDB_RATING:.1f}"
+        )
 
-        if not TMDB_API_TOKEN:
+        print(
+            f"Mindestanzahl Bewertungen: "
+            f"{MIN_TMDB_VOTES}"
+        )
 
-            print(
-                "TMDB wird übersprungen, "
-                "da kein API Token vorhanden ist."
+        print()
+
+
+        for film in new_films:
+
+            title = film.get(
+                "title",
+                "Unbekannt"
             )
 
-            print()
 
-        else:
+            print(
+                f"Prüfe: {title}"
+            )
 
-            for number, film in enumerate(
-                new_films,
-                start=1
-            ):
 
-                title = film.get(
-                    "title",
-                    "Unbekannt"
-                )
+            tmdb = search_tmdb(
+                title
+            )
 
+
+            if not tmdb:
 
                 print(
-                    f"{number}. {title}"
+                    "   TMDB: kein Film gefunden"
                 )
 
-                print(
-                    "   Suche bei TMDB..."
-                )
-
-
-                tmdb = search_tmdb(
-                    title
-                )
-
-
-                if tmdb:
-
-                    rating = tmdb.get(
-                        "rating"
-                    )
-
-                    votes = tmdb.get(
-                        "votes",
-                        0
-                    )
-
-                    tmdb_title = tmdb.get(
-                        "title",
-                        ""
-                    )
-
-                    year = tmdb.get(
-                        "year",
-                        ""
-                    )
-
-
-                    if rating is not None:
-
-                        rating_display = (
-                            f"{rating:.1f}"
-                        )
-
-                    else:
-
-                        rating_display = (
-                            "keine Bewertung"
-                        )
-
-
-                    print(
-                        f"   TMDB: "
-                        f"{tmdb_title}"
-                    )
-
-                    if year:
-
-                        print(
-                            f"   Jahr: "
-                            f"{year}"
-                        )
-
-
-                    print(
-                        f"   Bewertung: "
-                        f"{rating_display}"
-                    )
-
-                    print(
-                        f"   Stimmen: "
-                        f"{votes}"
-                    )
-
-                else:
-
-                    print(
-                        "   TMDB: "
-                        "kein passender Film gefunden"
-                    )
-
+                tmdb_stats[
+                    "kein_treffer"
+                ] += 1
 
                 print()
 
+                continue
 
-    else:
+
+            rating = tmdb.get(
+                "rating"
+            )
+
+            votes = tmdb.get(
+                "votes",
+                0
+            )
+
+            tmdb_title = tmdb.get(
+                "title",
+                ""
+            )
+
+            year = tmdb.get(
+                "year",
+                ""
+            )
+
+
+            print(
+                f"   TMDB: {tmdb_title}"
+            )
+
+
+            if year:
+
+                print(
+                    f"   Jahr: {year}"
+                )
+
+
+            if rating is not None:
+
+                print(
+                    f"   Bewertung: "
+                    f"{rating:.1f}"
+                )
+
+            else:
+
+                print(
+                    "   Bewertung: unbekannt"
+                )
+
+
+            print(
+                f"   Bewertungen: "
+                f"{votes}"
+            )
+
+
+            # ----------------------------
+            # BEWERTUNG PRÜFEN
+            # ----------------------------
+
+            if (
+                rating is None
+                or rating < MIN_TMDB_RATING
+            ):
+
+                print(
+                    "   -> Bewertung zu niedrig"
+                )
+
+                tmdb_stats[
+                    "bewertung_zu_niedrig"
+                ] += 1
+
+                print()
+
+                continue
+
+
+            # ----------------------------
+            # ANZAHL BEWERTUNGEN PRÜFEN
+            # ----------------------------
+
+            if votes < MIN_TMDB_VOTES:
+
+                print(
+                    "   -> Zu wenige Bewertungen"
+                )
+
+                tmdb_stats[
+                    "zu_wenig_stimmen"
+                ] += 1
+
+                print()
+
+                continue
+
+
+            # ----------------------------
+            # BEIDE KRITERIEN ERFÜLLT
+            # ----------------------------
+
+            print(
+                "   -> *** INTERESSANT ***"
+            )
+
+
+            tmdb_stats[
+                "erfüllt_beide_kriterien"
+            ] += 1
+
+
+            # TMDB-Daten temporär
+            # am Film speichern
+
+            film["_tmdb"] = tmdb
+
+
+            interesting_films.append(
+                film
+            )
+
+
+            print()
+
+
+    elif new_films:
 
         print(
-            "Keine neuen Filme gefunden."
+            "TMDB-Prüfung übersprungen:"
+        )
+
+        print(
+            "Kein TMDB API Token vorhanden."
         )
 
         print()
 
 
     # ====================================
-    # FILME AUSGEBEN
+    # TMDB STATISTIK
     # ====================================
 
-    if new_films:
+    print(
+        "========================================"
+    )
 
-        print(
-            "========================================"
-        )
+    print(
+        "TMDB-STATISTIK"
+    )
 
-        print(
-            "NEUE FILME"
-        )
+    print(
+        "========================================"
+    )
 
-        print(
-            "========================================"
-        )
+    print()
 
-        print()
+    print(
+        f"Neue Filme: "
+        f"{len(new_films)}"
+    )
 
+    print(
+        f"Kein TMDB-Treffer: "
+        f"{tmdb_stats['kein_treffer']}"
+    )
+
+    print(
+        f"Bewertung zu niedrig: "
+        f"{tmdb_stats['bewertung_zu_niedrig']}"
+    )
+
+    print(
+        f"Zu wenige Bewertungen: "
+        f"{tmdb_stats['zu_wenig_stimmen']}"
+    )
+
+    print(
+        f"Beide Kriterien erfüllt: "
+        f"{tmdb_stats['erfüllt_beide_kriterien']}"
+    )
+
+    print()
+
+
+    # ====================================
+    # INTERESSANTE FILME
+    # ====================================
+
+    print(
+        "========================================"
+    )
+
+    print(
+        "INTERESSANTE FILME"
+    )
+
+    print(
+        "========================================"
+    )
+
+    print()
+
+
+    if interesting_films:
 
         for number, film in enumerate(
-            new_films,
+            interesting_films,
             start=1
         ):
 
@@ -981,6 +1104,12 @@ try:
             website = film.get(
                 "url_website",
                 ""
+            )
+
+
+            tmdb = film.get(
+                "_tmdb",
+                {}
             )
 
 
@@ -1019,14 +1148,34 @@ try:
             )
 
             print(
+                f"   TMDB: "
+                f"{tmdb.get('rating', 0):.1f}"
+            )
+
+            print(
+                f"   Bewertungen: "
+                f"{tmdb.get('votes', 0)}"
+            )
+
+            print(
                 f"   Link: {website}"
             )
 
             print()
 
 
+    else:
+
+        print(
+            "Keine Filme erfüllen aktuell "
+            "beide TMDB-Kriterien."
+        )
+
+        print()
+
+
     # ====================================
-    # SPEICHERN
+    # ALLE NEUEN FILME SPEICHERN
     # ====================================
 
     today = datetime.now().strftime(
@@ -1070,7 +1219,7 @@ try:
 
 
     # ====================================
-    # seen.json
+    # seen.json SCHREIBEN
     # ====================================
 
     with open(
