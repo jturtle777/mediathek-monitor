@@ -607,15 +607,13 @@ def send_movie_email(films):
 
 
     msg["Subject"] = subject
-
     msg["From"] = MAIL_USERNAME
-
     msg["To"] = MAIL_TO
 
 
-    # ------------------------------------
+    # ====================================
     # TEXT-VERSION
-    # ------------------------------------
+    # ====================================
 
     text_lines = [
 
@@ -725,9 +723,9 @@ def send_movie_email(films):
     )
 
 
-    # ------------------------------------
+    # ====================================
     # HTML MAIL
-    # ------------------------------------
+    # ====================================
 
     html_parts = [
 
@@ -791,9 +789,12 @@ def send_movie_email(films):
     ])
 
 
-    # ------------------------------------
+    # ====================================
     # FILME
-    # ------------------------------------
+    # ====================================
+
+    embedded_images = []
+
 
     for number, film in enumerate(
         films,
@@ -846,275 +847,249 @@ def send_movie_email(films):
         )
 
 
-        safe_title = html.escape(
-            title
-        )
-
-        safe_channel = html.escape(
-            channel
-        )
-
-        safe_website = html.escape(
-            website,
-            quote=True
-        )
-
-
         # --------------------------------
-        # Poster herunterladen
+        # COVER
         # --------------------------------
 
-        poster_data = None
-
-        content_id = None
+        image_cid = None
 
 
         if poster_path:
 
-            print(
-                f"   Lade Cover: {title}"
-            )
-
-            poster_data = download_poster(
-                poster_path
+            poster_url = (
+                "https://image.tmdb.org/t/p/w300"
+                + poster_path
             )
 
 
-            if poster_data:
+            try:
 
-                content_id = make_msgid()
-
-                content_id = (
-                    content_id
-                    .strip("<>")
+                print(
+                    f"   Lade Cover: {title}"
                 )
+
+
+                with urllib.request.urlopen(
+                    poster_url,
+                    timeout=20
+                ) as response:
+
+                    image_data = response.read()
+
+
+                image_cid = (
+                    f"poster{number}-"
+                    f"{uuid.uuid4().hex}"
+                )
+
+
+                embedded_images.append({
+
+                    "data":
+                        image_data,
+
+                    "cid":
+                        image_cid,
+
+                    "filename":
+                        f"poster_{number}.jpg"
+
+                })
+
 
                 print(
                     "   Cover erfolgreich geladen."
                 )
 
-            else:
+
+            except Exception as e:
 
                 print(
-                    "   Kein Cover verfügbar."
+                    f"   Cover konnte nicht "
+                    f"geladen werden: {e}"
                 )
 
 
         # --------------------------------
-        # HTML FILM-BLOCK
+        # FILM-BLOCK
         # --------------------------------
 
         html_parts.append(
+
             """
             <div style="
                 border-top:1px solid #ddd;
                 padding:20px 0;
+                display:flex;
             ">
             """
         )
 
 
-        if content_id:
+        # --------------------------------
+        # COVER HTML
+        # --------------------------------
+
+        if image_cid:
 
             html_parts.append(
+
                 f"""
-                <table cellpadding="0"
-                       cellspacing="0"
-                       border="0"
-                       width="100%">
-
-                <tr>
-
-                <td width="{POSTER_WIDTH + 20}"
-                    valign="top">
-
-                <img
-                    src="cid:{content_id}"
-                    width="{POSTER_WIDTH}"
-                    style="
-                        display:block;
-                        width:{POSTER_WIDTH}px;
-                        height:auto;
-                        border-radius:4px;
-                    "
-                >
-
-                </td>
-
-                <td valign="top"
-                    style="
-                        padding-left:10px;
-                    ">
+                <div style="
+                    width:110px;
+                    min-width:110px;
+                    margin-right:18px;
+                ">
+                    <img
+                        src="cid:{image_cid}"
+                        width="100"
+                        style="
+                            width:100px;
+                            height:auto;
+                            display:block;
+                            border-radius:5px;
+                        "
+                    >
+                </div>
                 """
+
             )
 
         else:
 
             html_parts.append(
+
                 """
-                <div>
+                <div style="
+                    width:110px;
+                    min-width:110px;
+                    margin-right:18px;
+                ">
+                </div>
                 """
+
             )
 
 
-        html_parts.append(
-            f"""
-            <h3 style="
-                margin:0 0 8px 0;
-            ">
-                {number}. {safe_title}
-            </h3>
-            """
-        )
-
+        # --------------------------------
+        # INFORMATIONEN
+        # --------------------------------
 
         html_parts.append(
-            f"""
-            <p style="
-                margin:4px 0;
-                color:#444;
-            ">
-                <strong>Sender:</strong>
-                {safe_channel}
-            </p>
 
-            <p style="
-                margin:4px 0;
-                color:#444;
-            ">
-                <strong>Dauer:</strong>
-                {duration} Minuten
-            </p>
+            f"""
+            <div>
+
+                <h3 style="
+                    margin:0 0 8px 0;
+                    font-size:18px;
+                ">
+                    {title}
+                </h3>
+
+                <div style="
+                    color:#555;
+                    font-size:14px;
+                    line-height:1.6;
+                ">
+
+                    <div>
+                        <strong>Sender:</strong>
+                        {channel}
+                    </div>
+
+                    <div>
+                        <strong>Dauer:</strong>
+                        {duration} Minuten
+                    </div>
             """
+
         )
 
 
         if year:
 
             html_parts.append(
+
                 f"""
-                <p style="
-                    margin:4px 0;
-                    color:#444;
-                ">
-                    <strong>Jahr:</strong>
-                    {html.escape(year)}
-                </p>
+                    <div>
+                        <strong>Jahr:</strong>
+                        {year}
+                    </div>
                 """
+
             )
 
 
         if rating is not None:
 
             html_parts.append(
+
                 f"""
-                <p style="
-                    margin:4px 0;
-                    color:#444;
-                ">
-                    <strong>TMDB:</strong>
-                    ⭐ {rating:.1f}
-                </p>
+                    <div>
+                        <strong>TMDB:</strong>
+                        {rating:.1f}/10
+                        &nbsp; ({votes:,} Bewertungen)
+                    </div>
+                """.replace(
+                    ",",
+                    "."
+                )
+
+            )
+
+
+        if website:
+
+            html_parts.append(
+
+                f"""
+                    <div style="
+                        margin-top:10px;
+                    ">
+                        <a
+                            href="{website}"
+                            style="
+                                color:#0066cc;
+                                text-decoration:none;
+                            "
+                        >
+                            ▶ Film in der Mediathek öffnen
+                        </a>
+                    </div>
                 """
+
             )
 
 
         html_parts.append(
-            f"""
-            <p style="
-                margin:4px 0 12px 0;
-                color:#444;
-            ">
-                <strong>Bewertungen:</strong>
-                {votes:,}
-            </p>
 
-            <p>
-                <a
-                    href="{safe_website}"
-                    style="
-                        display:inline-block;
-                        padding:8px 14px;
-                        background:#333;
-                        color:white;
-                        text-decoration:none;
-                        border-radius:4px;
-                    "
-                >
-                    Film ansehen
-                </a>
-            </p>
             """
-        )
-
-
-        if content_id:
-
-            html_parts.append(
-                """
-                </td>
-                </tr>
-                </table>
-                """
-            )
-
-        else:
-
-            html_parts.append(
-                """
                 </div>
-                """
-            )
-
-
-        html_parts.append(
-            """
+            </div>
             </div>
             """
+
         )
 
 
-        # --------------------------------
-        # Poster als MIME-Anhang
-        # --------------------------------
+    # ====================================
+    # HTML ABSCHLIESSEN
+    # ====================================
 
-        if poster_data and content_id:
-
-            msg.add_related(
-
-                poster_data,
-
-                maintype="image",
-
-                subtype="jpeg",
-
-                cid=f"<{content_id}>",
-
-                filename=f"poster_{number}.jpg"
-
-            )
-
-
-    # ------------------------------------
-    # Footer
-    # ------------------------------------
-
-    html_parts.extend([
+    html_parts.append(
 
         """
-        <hr style="
-            border:none;
+        <div style="
             border-top:1px solid #ddd;
-            margin-top:20px;
-        ">
-
-        <p style="
+            margin-top:10px;
+            padding-top:15px;
             color:#888;
             font-size:12px;
         ">
             Automatisch erstellt vom
             Mediathek Monitor.
-        </p>
+        </div>
 
         </div>
 
@@ -1122,23 +1097,48 @@ def send_movie_email(films):
         </html>
         """
 
-    ])
+    )
 
 
-    html_body = "".join(
+    html = "".join(
         html_parts
     )
 
 
+    # ====================================
+    # HTML ZUR MAIL HINZUFÜGEN
+    # ====================================
+
     msg.add_alternative(
-        html_body,
+        html,
         subtype="html"
     )
 
 
-    # ------------------------------------
+    # ====================================
+    # COVERS ALS INLINE-BILDER EINBETTEN
+    # ====================================
+
+    for image in embedded_images:
+
+        msg.get_payload()[1].add_related(
+
+            image["data"],
+
+            maintype="image",
+
+            subtype="jpeg",
+
+            cid=f"<{image['cid']}>",
+
+            filename=image["filename"]
+
+        )
+
+
+    # ====================================
     # SMTP
-    # ------------------------------------
+    # ====================================
 
     print()
     print(
@@ -1156,24 +1156,30 @@ def send_movie_email(films):
             "SMTP-Verbindung erfolgreich!"
         )
 
+
         smtp.starttls()
+
 
         print(
             "TLS-Verschlüsselung aktiviert."
         )
+
 
         smtp.login(
             MAIL_USERNAME,
             MAIL_PASSWORD
         )
 
+
         print(
             "Anmeldung erfolgreich."
         )
 
+
         smtp.send_message(
             msg
         )
+
 
         print(
             "E-Mail erfolgreich versendet!"
@@ -1181,6 +1187,12 @@ def send_movie_email(films):
 
 
     print()
+    print(
+        f"{len(embedded_images)} Cover "
+        "eingebettet."
+    )
+
+    print("========================================")
 
 
 # ========================================
