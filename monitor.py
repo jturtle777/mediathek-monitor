@@ -2,6 +2,11 @@ import urllib.request
 import urllib.parse
 import json
 import os
+import smtplib
+import html
+import uuid
+from email.message import EmailMessage
+from email.utils import make_msgid
 from datetime import datetime
 
 
@@ -22,6 +27,18 @@ MIN_TMDB_RATING = 6.5
 
 # Mindestanzahl Bewertungen bei TMDB
 MIN_TMDB_VOTES = 1000
+
+
+# ========================================
+# E-MAIL
+# ========================================
+
+# E-Mail nur versenden, wenn mindestens
+# ein interessanter Film gefunden wurde.
+SEND_EMAIL_ONLY_IF_FILMS_FOUND = True
+
+# Breite der Filmcover in der E-Mail
+POSTER_WIDTH = 120
 
 
 # ========================================
@@ -168,6 +185,10 @@ TMDB_API_URL = (
     "https://api.themoviedb.org/3/search/multi"
 )
 
+TMDB_IMAGE_URL = (
+    "https://image.tmdb.org/t/p/w342"
+)
+
 
 # ========================================
 # PROGRAMMSTART
@@ -195,6 +216,40 @@ else:
     print(
         "Bitte das GitHub Secret "
         "'TMDB_API_TOKEN' einrichten."
+    )
+
+print()
+
+
+# ========================================
+# E-MAIL STATUS
+# ========================================
+
+MAIL_USERNAME = os.environ.get(
+    "MAIL_USERNAME"
+)
+
+MAIL_PASSWORD = os.environ.get(
+    "MAIL_PASSWORD"
+)
+
+MAIL_TO = os.environ.get(
+    "MAIL_TO"
+)
+
+
+if (
+    MAIL_USERNAME
+    and MAIL_PASSWORD
+    and MAIL_TO
+):
+
+    print("E-Mail: Zugangsdaten vorhanden")
+
+else:
+
+    print(
+        "E-Mail: Zugangsdaten nicht vollständig"
     )
 
 print()
@@ -273,9 +328,11 @@ def search_tmdb(title):
 
     {
         "title": ...,
+        "original_title": ...,
         "year": ...,
         "rating": ...,
-        "votes": ...
+        "votes": ...,
+        "poster_path": ...
     }
 
     oder None.
@@ -412,7 +469,12 @@ def search_tmdb(title):
 
             "rating": rating,
 
-            "votes": votes
+            "votes": votes,
+
+            "poster_path":
+                movie.get(
+                    "poster_path"
+                )
 
         }
 
@@ -424,6 +486,701 @@ def search_tmdb(title):
         )
 
         return None
+
+
+# ========================================
+# POSTER HERUNTERLADEN
+# ========================================
+
+def download_poster(poster_path):
+
+    """
+    Lädt ein TMDB-Poster herunter.
+
+    Rückgabe:
+        bytes oder None
+    """
+
+    if not poster_path:
+
+        return None
+
+
+    try:
+
+        poster_url = (
+            TMDB_IMAGE_URL
+            + poster_path
+        )
+
+
+        request = urllib.request.Request(
+
+            poster_url,
+
+            headers={
+                "User-Agent":
+                    "Mediathek-Monitor/1.0"
+            }
+
+        )
+
+
+        with urllib.request.urlopen(
+            request,
+            timeout=20
+        ) as response:
+
+            return response.read()
+
+
+    except Exception as e:
+
+        print(
+            f"   Poster-Fehler: {e}"
+        )
+
+        return None
+
+
+# ========================================
+# E-MAIL ERSTELLEN
+# ========================================
+
+def send_movie_email(films):
+
+    """
+    Erstellt und versendet die HTML-Mail
+    mit eingebetteten TMDB-Covern.
+    """
+
+    if not films:
+
+        return
+
+
+    if not (
+        MAIL_USERNAME
+        and MAIL_PASSWORD
+        and MAIL_TO
+    ):
+
+        print(
+            "E-Mail nicht versendet:"
+        )
+
+        print(
+            "E-Mail-Zugangsdaten fehlen."
+        )
+
+        return
+
+
+    print()
+    print("========================================")
+    print("E-MAIL")
+    print("========================================")
+    print()
+
+    print(
+        f"Bereite E-Mail mit "
+        f"{len(films)} Film(en) vor..."
+    )
+
+
+    msg = EmailMessage()
+
+
+    if len(films) == 1:
+
+        subject = (
+            "Mediathek Monitor – "
+            "1 neuer Film"
+        )
+
+    else:
+
+        subject = (
+            "Mediathek Monitor – "
+            f"{len(films)} neue Filme"
+        )
+
+
+    msg["Subject"] = subject
+
+    msg["From"] = MAIL_USERNAME
+
+    msg["To"] = MAIL_TO
+
+
+    # ------------------------------------
+    # TEXT-VERSION
+    # ------------------------------------
+
+    text_lines = [
+
+        "Mediathek Monitor",
+        "",
+        f"{len(films)} interessante "
+        "Film(e) gefunden:",
+        ""
+
+    ]
+
+
+    for number, film in enumerate(
+        films,
+        start=1
+    ):
+
+        title = film.get(
+            "title",
+            "Unbekannt"
+        )
+
+        channel = film.get(
+            "channel",
+            "Unbekannt"
+        )
+
+        duration = round(
+            film.get(
+                "duration",
+                0
+            ) / 60
+        )
+
+        website = film.get(
+            "url_website",
+            ""
+        )
+
+        tmdb = film.get(
+            "_tmdb",
+            {}
+        )
+
+        rating = tmdb.get(
+            "rating"
+        )
+
+        votes = tmdb.get(
+            "votes",
+            0
+        )
+
+        year = tmdb.get(
+            "year",
+            ""
+        )
+
+
+        text_lines.append(
+            f"{number}. {title}"
+        )
+
+        text_lines.append(
+            f"   Sender: {channel}"
+        )
+
+        text_lines.append(
+            f"   Dauer: {duration} Minuten"
+        )
+
+
+        if year:
+
+            text_lines.append(
+                f"   Jahr: {year}"
+            )
+
+
+        if rating is not None:
+
+            text_lines.append(
+                f"   TMDB: {rating:.1f}"
+            )
+
+
+        text_lines.append(
+            f"   Bewertungen: {votes}"
+        )
+
+        text_lines.append(
+            f"   Link: {website}"
+        )
+
+        text_lines.append("")
+
+
+    text_lines.append(
+        "Mediathek Monitor"
+    )
+
+
+    msg.set_content(
+        "\n".join(
+            text_lines
+        )
+    )
+
+
+    # ------------------------------------
+    # HTML MAIL
+    # ------------------------------------
+
+    html_parts = [
+
+        """
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset="UTF-8">
+        </head>
+
+        <body style="
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            margin:0;
+            padding:20px;
+        ">
+
+        <div style="
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:24px;
+            border-radius:8px;
+        ">
+
+        <h2 style="
+            margin-top:0;
+        ">
+            Mediathek Monitor
+        </h2>
+
+        <p>
+            Es wurden
+            <strong>
+        """
+
+    ]
+
+
+    if len(films) == 1:
+
+        html_parts.append(
+            "1 interessanter Film"
+        )
+
+    else:
+
+        html_parts.append(
+            f"{len(films)} interessante Filme"
+        )
+
+
+    html_parts.extend([
+
+        """
+            </strong>
+            gefunden:
+        </p>
+        """
+
+    ])
+
+
+    # ------------------------------------
+    # FILME
+    # ------------------------------------
+
+    for number, film in enumerate(
+        films,
+        start=1
+    ):
+
+        title = film.get(
+            "title",
+            "Unbekannt"
+        )
+
+        channel = film.get(
+            "channel",
+            "Unbekannt"
+        )
+
+        duration = round(
+            film.get(
+                "duration",
+                0
+            ) / 60
+        )
+
+        website = film.get(
+            "url_website",
+            ""
+        )
+
+        tmdb = film.get(
+            "_tmdb",
+            {}
+        )
+
+        rating = tmdb.get(
+            "rating"
+        )
+
+        votes = tmdb.get(
+            "votes",
+            0
+        )
+
+        year = tmdb.get(
+            "year",
+            ""
+        )
+
+        poster_path = tmdb.get(
+            "poster_path"
+        )
+
+
+        safe_title = html.escape(
+            title
+        )
+
+        safe_channel = html.escape(
+            channel
+        )
+
+        safe_website = html.escape(
+            website,
+            quote=True
+        )
+
+
+        # --------------------------------
+        # Poster herunterladen
+        # --------------------------------
+
+        poster_data = None
+
+        content_id = None
+
+
+        if poster_path:
+
+            print(
+                f"   Lade Cover: {title}"
+            )
+
+            poster_data = download_poster(
+                poster_path
+            )
+
+
+            if poster_data:
+
+                content_id = make_msgid()
+
+                content_id = (
+                    content_id
+                    .strip("<>")
+                )
+
+                print(
+                    "   Cover erfolgreich geladen."
+                )
+
+            else:
+
+                print(
+                    "   Kein Cover verfügbar."
+                )
+
+
+        # --------------------------------
+        # HTML FILM-BLOCK
+        # --------------------------------
+
+        html_parts.append(
+            """
+            <div style="
+                border-top:1px solid #ddd;
+                padding:20px 0;
+            ">
+            """
+        )
+
+
+        if content_id:
+
+            html_parts.append(
+                f"""
+                <table cellpadding="0"
+                       cellspacing="0"
+                       border="0"
+                       width="100%">
+
+                <tr>
+
+                <td width="{POSTER_WIDTH + 20}"
+                    valign="top">
+
+                <img
+                    src="cid:{content_id}"
+                    width="{POSTER_WIDTH}"
+                    style="
+                        display:block;
+                        width:{POSTER_WIDTH}px;
+                        height:auto;
+                        border-radius:4px;
+                    "
+                >
+
+                </td>
+
+                <td valign="top"
+                    style="
+                        padding-left:10px;
+                    ">
+                """
+            )
+
+        else:
+
+            html_parts.append(
+                """
+                <div>
+                """
+            )
+
+
+        html_parts.append(
+            f"""
+            <h3 style="
+                margin:0 0 8px 0;
+            ">
+                {number}. {safe_title}
+            </h3>
+            """
+        )
+
+
+        html_parts.append(
+            f"""
+            <p style="
+                margin:4px 0;
+                color:#444;
+            ">
+                <strong>Sender:</strong>
+                {safe_channel}
+            </p>
+
+            <p style="
+                margin:4px 0;
+                color:#444;
+            ">
+                <strong>Dauer:</strong>
+                {duration} Minuten
+            </p>
+            """
+        )
+
+
+        if year:
+
+            html_parts.append(
+                f"""
+                <p style="
+                    margin:4px 0;
+                    color:#444;
+                ">
+                    <strong>Jahr:</strong>
+                    {html.escape(year)}
+                </p>
+                """
+            )
+
+
+        if rating is not None:
+
+            html_parts.append(
+                f"""
+                <p style="
+                    margin:4px 0;
+                    color:#444;
+                ">
+                    <strong>TMDB:</strong>
+                    ⭐ {rating:.1f}
+                </p>
+                """
+            )
+
+
+        html_parts.append(
+            f"""
+            <p style="
+                margin:4px 0 12px 0;
+                color:#444;
+            ">
+                <strong>Bewertungen:</strong>
+                {votes:,}
+            </p>
+
+            <p>
+                <a
+                    href="{safe_website}"
+                    style="
+                        display:inline-block;
+                        padding:8px 14px;
+                        background:#333;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:4px;
+                    "
+                >
+                    Film ansehen
+                </a>
+            </p>
+            """
+        )
+
+
+        if content_id:
+
+            html_parts.append(
+                """
+                </td>
+                </tr>
+                </table>
+                """
+            )
+
+        else:
+
+            html_parts.append(
+                """
+                </div>
+                """
+            )
+
+
+        html_parts.append(
+            """
+            </div>
+            """
+        )
+
+
+        # --------------------------------
+        # Poster als MIME-Anhang
+        # --------------------------------
+
+        if poster_data and content_id:
+
+            msg.add_related(
+
+                poster_data,
+
+                maintype="image",
+
+                subtype="jpeg",
+
+                cid=f"<{content_id}>",
+
+                filename=f"poster_{number}.jpg"
+
+            )
+
+
+    # ------------------------------------
+    # Footer
+    # ------------------------------------
+
+    html_parts.extend([
+
+        """
+        <hr style="
+            border:none;
+            border-top:1px solid #ddd;
+            margin-top:20px;
+        ">
+
+        <p style="
+            color:#888;
+            font-size:12px;
+        ">
+            Automatisch erstellt vom
+            Mediathek Monitor.
+        </p>
+
+        </div>
+
+        </body>
+        </html>
+        """
+
+    ])
+
+
+    html_body = "".join(
+        html_parts
+    )
+
+
+    msg.add_alternative(
+        html_body,
+        subtype="html"
+    )
+
+
+    # ------------------------------------
+    # SMTP
+    # ------------------------------------
+
+    print()
+    print(
+        "Verbinde mit iCloud Mail..."
+    )
+
+
+    with smtplib.SMTP(
+        "smtp.mail.me.com",
+        587,
+        timeout=30
+    ) as smtp:
+
+        print(
+            "SMTP-Verbindung erfolgreich!"
+        )
+
+        smtp.starttls()
+
+        print(
+            "TLS-Verschlüsselung aktiviert."
+        )
+
+        smtp.login(
+            MAIL_USERNAME,
+            MAIL_PASSWORD
+        )
+
+        print(
+            "Anmeldung erfolgreich."
+        )
+
+        smtp.send_message(
+            msg
+        )
+
+        print(
+            "E-Mail erfolgreich versendet!"
+        )
+
+
+    print()
 
 
 # ========================================
@@ -1172,6 +1929,25 @@ try:
         )
 
         print()
+
+
+    # ====================================
+    # E-MAIL VERSENDEN
+    # ====================================
+
+    if interesting_films:
+
+        send_movie_email(
+            interesting_films
+        )
+
+    else:
+
+        print(
+            "Keine E-Mail versendet, "
+            "da keine interessanten Filme "
+            "gefunden wurden."
+        )
 
 
     # ====================================
