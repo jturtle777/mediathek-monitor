@@ -23,3 +23,10 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python tmdb_test.py
+      
+      - name: Test E-Mail
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python testemail.py  
