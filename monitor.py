@@ -268,7 +268,7 @@ query = {
     "sortOrder": "desc",
     "future": False,
     "offset": 0,
-    "size": 100,
+    "size": 300,
     "duration_min": MIN_DURATION * 60
 }
 
