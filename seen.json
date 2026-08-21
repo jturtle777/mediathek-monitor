@@ -1293,5 +1293,35 @@
     "title": "Der süße Brei",
     "channel": "MDR",
     "first_seen": "2026-08-20"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL21hbmtlbGxzLXdhbGxhbmRlcjEvMjAyMi0xMC0wMV8wMC0zMC1NRVNa": {
+    "title": "Der Kurier – Mankells Wallander",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyMldPMDAwMzk1QTA": {
+    "title": "Sisi & ich",
+    "channel": "BR",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci11c2Vkb20ta3JpbWkvMjAyMy0xMS0xNF8yMC0xNS1NRVo": {
+    "title": "Geburt der Drachenfrau – Der Usedom-Krimi",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzk4OGZjOGU1LTczYTktNGFmMC05YzhiLTY0YmI0ODM0Njc0NV9nYW56ZVNlbmR1bmc": {
+    "title": "Die letzte Zeugin – Der Amsterdam-Krimi (10)",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYi1vbmxpbmUuZGUvZmlsbXplaXQvMjAxOS0wNi0wOVQyMzozMDowMF8wYzk1NDA2NC0wNmMzLTQ3MTctYTJmYy00OTM0ZDk1ZTc2YzkvcG9saXplaXJ1Zi0xMTAtLXdvbGZzbGFuZA": {
+    "title": "Wolfsland",
+    "channel": "RBB",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNDUxNTM": {
+    "title": "Landesschau Baden-Württemberg vom 20.8.2026",
+    "channel": "SWR",
+    "first_seen": "2026-08-21"
   }
 }
