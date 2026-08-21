@@ -6,7 +6,6 @@ import smtplib
 import html
 import uuid
 from email.message import EmailMessage
-from email.utils import make_msgid
 from datetime import datetime
 
 
@@ -181,12 +180,21 @@ TMDB_API_TOKEN = os.environ.get(
     "TMDB_API_TOKEN"
 )
 
-TMDB_API_URL = (
-    "https://api.themoviedb.org/3/search/multi"
+# Jetzt gezielt Filmsuche statt /search/multi
+TMDB_SEARCH_URL = (
+    "https://api.themoviedb.org/3/search/movie"
+)
+
+TMDB_MOVIE_URL = (
+    "https://api.themoviedb.org/3/movie"
 )
 
 TMDB_IMAGE_URL = (
     "https://image.tmdb.org/t/p/w342"
+)
+
+TMDB_POSTER_URL = (
+    "https://image.tmdb.org/t/p/w300"
 )
 
 
@@ -316,13 +324,324 @@ stats = {
 
 
 # ========================================
+# YOUTUBE SUCHLINK
+# ========================================
+
+def create_youtube_search_url(title):
+
+    """
+    Erstellt einen YouTube-Suchlink für
+    einen deutschen Trailer.
+    """
+
+    query = (
+        f"{title} deutscher Trailer"
+    )
+
+    encoded_query = urllib.parse.quote_plus(
+        query
+    )
+
+    return (
+        "https://www.youtube.com/results?"
+        f"search_query={encoded_query}"
+    )
+
+
+# ========================================
+# TRAILER AUS TMDB AUSWÄHLEN
+# ========================================
+
+def find_best_trailer(videos):
+
+    """
+    Sucht den bestmöglichen Trailer.
+
+    Priorität:
+
+    1. Deutscher Trailer
+    2. Deutscher Teaser
+    3. Englischer Trailer
+    4. Englischer Teaser
+    5. Sonstiger Trailer
+    6. Sonstiges YouTube-Video
+
+    Rückgabe:
+
+    {
+        "url": ...,
+        "name": ...,
+        "language": ...
+    }
+
+    oder None.
+    """
+
+    if not videos:
+
+        return None
+
+
+    youtube_videos = []
+
+    for video in videos:
+
+        if video.get("site") != "YouTube":
+
+            continue
+
+        key = video.get("key")
+
+        if not key:
+
+            continue
+
+        youtube_videos.append(video)
+
+
+    if not youtube_videos:
+
+        return None
+
+
+    def youtube_url(video):
+
+        return (
+            "https://www.youtube.com/watch?v="
+            + video.get("key")
+        )
+
+
+    # ------------------------------------
+    # 1. Deutscher offizieller Trailer
+    # ------------------------------------
+
+    german_trailers = [
+
+        video
+
+        for video in youtube_videos
+
+        if (
+            video.get("iso_639_1") == "de"
+            and video.get("type") == "Trailer"
+        )
+
+    ]
+
+
+    if german_trailers:
+
+        video = german_trailers[0]
+
+        return {
+
+            "url":
+                youtube_url(video),
+
+            "name":
+                video.get(
+                    "name",
+                    "Deutscher Trailer"
+                ),
+
+            "language":
+                "de"
+
+        }
+
+
+    # ------------------------------------
+    # 2. Deutscher Teaser
+    # ------------------------------------
+
+    german_teasers = [
+
+        video
+
+        for video in youtube_videos
+
+        if (
+            video.get("iso_639_1") == "de"
+            and video.get("type") == "Teaser"
+        )
+
+    ]
+
+
+    if german_teasers:
+
+        video = german_teasers[0]
+
+        return {
+
+            "url":
+                youtube_url(video),
+
+            "name":
+                video.get(
+                    "name",
+                    "Deutscher Teaser"
+                ),
+
+            "language":
+                "de"
+
+        }
+
+
+    # ------------------------------------
+    # 3. Englischer Trailer
+    # ------------------------------------
+
+    english_trailers = [
+
+        video
+
+        for video in youtube_videos
+
+        if (
+            video.get("iso_639_1") == "en"
+            and video.get("type") == "Trailer"
+        )
+
+    ]
+
+
+    if english_trailers:
+
+        video = english_trailers[0]
+
+        return {
+
+            "url":
+                youtube_url(video),
+
+            "name":
+                video.get(
+                    "name",
+                    "Trailer"
+                ),
+
+            "language":
+                "en"
+
+        }
+
+
+    # ------------------------------------
+    # 4. Englischer Teaser
+    # ------------------------------------
+
+    english_teasers = [
+
+        video
+
+        for video in youtube_videos
+
+        if (
+            video.get("iso_639_1") == "en"
+            and video.get("type") == "Teaser"
+        )
+
+    ]
+
+
+    if english_teasers:
+
+        video = english_teasers[0]
+
+        return {
+
+            "url":
+                youtube_url(video),
+
+            "name":
+                video.get(
+                    "name",
+                    "Teaser"
+                ),
+
+            "language":
+                "en"
+
+        }
+
+
+    # ------------------------------------
+    # 5. Irgendein Trailer
+    # ------------------------------------
+
+    trailers = [
+
+        video
+
+        for video in youtube_videos
+
+        if video.get("type") == "Trailer"
+
+    ]
+
+
+    if trailers:
+
+        video = trailers[0]
+
+        return {
+
+            "url":
+                youtube_url(video),
+
+            "name":
+                video.get(
+                    "name",
+                    "Trailer"
+                ),
+
+            "language":
+                video.get(
+                    "iso_639_1",
+                    ""
+                )
+
+        }
+
+
+    # ------------------------------------
+    # 6. Irgendein YouTube-Video
+    # ------------------------------------
+
+    video = youtube_videos[0]
+
+    return {
+
+        "url":
+            youtube_url(video),
+
+        "name":
+            video.get(
+                "name",
+                "Video"
+            ),
+
+        "language":
+            video.get(
+                "iso_639_1",
+                ""
+            )
+
+    }
+
+
+# ========================================
 # TMDB-FUNKTION
 # ========================================
 
 def search_tmdb(title):
 
     """
-    Sucht einen Titel bei TMDB.
+    Sucht einen Film bei TMDB und lädt
+    zusätzlich IMDb-ID und Videos.
 
     Rückgabe:
 
@@ -332,7 +651,13 @@ def search_tmdb(title):
         "year": ...,
         "rating": ...,
         "votes": ...,
-        "poster_path": ...
+        "poster_path": ...,
+        "imdb_id": ...,
+        "imdb_url": ...,
+        "trailer_url": ...,
+        "trailer_name": ...,
+        "trailer_language": ...,
+        "youtube_search_url": ...
     }
 
     oder None.
@@ -344,6 +669,10 @@ def search_tmdb(title):
 
 
     try:
+
+        # --------------------------------
+        # TMDB FILM SUCHEN
+        # --------------------------------
 
         params = urllib.parse.urlencode({
 
@@ -359,7 +688,7 @@ def search_tmdb(title):
 
 
         request_url = (
-            TMDB_API_URL
+            TMDB_SEARCH_URL
             + "?"
             + params
         )
@@ -406,26 +735,21 @@ def search_tmdb(title):
             return None
 
 
-        # Nur Filme berücksichtigen
-        movie_results = [
+        # --------------------------------
+        # FILM AUSWÄHLEN
+        # --------------------------------
 
-            item
-
-            for item in results
-
-            if item.get(
-                "media_type"
-            ) == "movie"
-
-        ]
+        movie = results[0]
 
 
-        if not movie_results:
+        movie_id = movie.get(
+            "id"
+        )
+
+
+        if not movie_id:
 
             return None
-
-
-        movie = movie_results[0]
 
 
         release_date = movie.get(
@@ -452,12 +776,158 @@ def search_tmdb(title):
         )
 
 
+        # --------------------------------
+        # DETAILDATEN LADEN
+        # --------------------------------
+
+        detail_url = (
+            f"{TMDB_MOVIE_URL}/{movie_id}"
+        )
+
+
+        detail_params = urllib.parse.urlencode({
+
+            "language":
+                "de-DE",
+
+            "append_to_response":
+                "videos,external_ids"
+
+        })
+
+
+        detail_request_url = (
+            detail_url
+            + "?"
+            + detail_params
+        )
+
+
+        detail_request = urllib.request.Request(
+
+            detail_request_url,
+
+            headers={
+
+                "Authorization":
+                    f"Bearer {TMDB_API_TOKEN}",
+
+                "Accept":
+                    "application/json"
+
+            },
+
+            method="GET"
+        )
+
+
+        with urllib.request.urlopen(
+            detail_request,
+            timeout=20
+        ) as response:
+
+            details = json.loads(
+                response.read().decode(
+                    "utf-8"
+                )
+            )
+
+
+        # --------------------------------
+        # IMDb-ID
+        # --------------------------------
+
+        external_ids = details.get(
+            "external_ids",
+            {}
+        )
+
+
+        imdb_id = external_ids.get(
+            "imdb_id"
+        )
+
+
+        imdb_url = ""
+
+
+        if imdb_id:
+
+            imdb_url = (
+                "https://www.imdb.com/title/"
+                + imdb_id
+                + "/"
+            )
+
+
+        # --------------------------------
+        # TRAILER
+        # --------------------------------
+
+        videos = details.get(
+            "videos",
+            {}
+        ).get(
+            "results",
+            []
+        )
+
+
+        trailer = find_best_trailer(
+            videos
+        )
+
+
+        trailer_url = ""
+
+        trailer_name = ""
+
+        trailer_language = ""
+
+
+        if trailer:
+
+            trailer_url = trailer.get(
+                "url",
+                ""
+            )
+
+            trailer_name = trailer.get(
+                "name",
+                ""
+            )
+
+            trailer_language = trailer.get(
+                "language",
+                ""
+            )
+
+
+        # --------------------------------
+        # YOUTUBE SUCHLINK
+        # --------------------------------
+
+        youtube_search_url = (
+            create_youtube_search_url(
+                title
+            )
+        )
+
+
+        # --------------------------------
+        # ERGEBNIS
+        # --------------------------------
+
         return {
 
-            "title": movie.get(
-                "title",
-                ""
-            ),
+            "id":
+                movie_id,
+
+            "title":
+                movie.get(
+                    "title",
+                    ""
+                ),
 
             "original_title":
                 movie.get(
@@ -465,16 +935,37 @@ def search_tmdb(title):
                     ""
                 ),
 
-            "year": year,
+            "year":
+                year,
 
-            "rating": rating,
+            "rating":
+                rating,
 
-            "votes": votes,
+            "votes":
+                votes,
 
             "poster_path":
                 movie.get(
                     "poster_path"
-                )
+                ),
+
+            "imdb_id":
+                imdb_id,
+
+            "imdb_url":
+                imdb_url,
+
+            "trailer_url":
+                trailer_url,
+
+            "trailer_name":
+                trailer_name,
+
+            "trailer_language":
+                trailer_language,
+
+            "youtube_search_url":
+                youtube_search_url
 
         }
 
@@ -594,14 +1085,14 @@ def send_movie_email(films):
     if len(films) == 1:
 
         subject = (
-            "Mediathek Monitor – "
+            "MyMediathek Monitor – "
             "1 neuer Film"
         )
 
     else:
 
         subject = (
-            "Mediathek Monitor – "
+            "MyMediathek Monitor – "
             f"{len(films)} neue Filme"
         )
 
@@ -617,7 +1108,7 @@ def send_movie_email(films):
 
     text_lines = [
 
-        "Mediathek Monitor",
+        "MyMediathek Monitor",
         "",
         f"{len(films)} interessante "
         "Film(e) gefunden:",
@@ -672,6 +1163,26 @@ def send_movie_email(films):
             ""
         )
 
+        imdb_url = tmdb.get(
+            "imdb_url",
+            ""
+        )
+
+        trailer_url = tmdb.get(
+            "trailer_url",
+            ""
+        )
+
+        trailer_name = tmdb.get(
+            "trailer_name",
+            ""
+        )
+
+        youtube_search_url = tmdb.get(
+            "youtube_search_url",
+            ""
+        )
+
 
         text_lines.append(
             f"{number}. {title}"
@@ -696,7 +1207,7 @@ def send_movie_email(films):
         if rating is not None:
 
             text_lines.append(
-                f"   TMDB: {rating:.1f}"
+                f"   TMDB: {rating:.1f}/10"
             )
 
 
@@ -704,15 +1215,54 @@ def send_movie_email(films):
             f"   Bewertungen: {votes}"
         )
 
+
+        if imdb_url:
+
+            text_lines.append(
+                f"   IMDb: {imdb_url}"
+            )
+
+
+        if trailer_url:
+
+            if trailer_name:
+
+                text_lines.append(
+                    f"   Trailer: "
+                    f"{trailer_name}"
+                )
+
+            else:
+
+                text_lines.append(
+                    "   Trailer:"
+                )
+
+            text_lines.append(
+                f"   {trailer_url}"
+            )
+
+
+        if youtube_search_url:
+
+            text_lines.append(
+                "   YouTube-Trailersuche:"
+            )
+
+            text_lines.append(
+                f"   {youtube_search_url}"
+            )
+
+
         text_lines.append(
-            f"   Link: {website}"
+            f"   Mediathek: {website}"
         )
 
         text_lines.append("")
 
 
     text_lines.append(
-        "Mediathek Monitor"
+        "MyMediathek Monitor"
     )
 
 
@@ -754,7 +1304,7 @@ def send_movie_email(films):
         <h2 style="
             margin-top:0;
         ">
-            Mediathek Monitor
+            MyMediathek Monitor
         </h2>
 
         <p>
@@ -846,6 +1396,31 @@ def send_movie_email(films):
             "poster_path"
         )
 
+        imdb_url = tmdb.get(
+            "imdb_url",
+            ""
+        )
+
+        trailer_url = tmdb.get(
+            "trailer_url",
+            ""
+        )
+
+        trailer_name = tmdb.get(
+            "trailer_name",
+            ""
+        )
+
+        trailer_language = tmdb.get(
+            "trailer_language",
+            ""
+        )
+
+        youtube_search_url = tmdb.get(
+            "youtube_search_url",
+            ""
+        )
+
 
         # --------------------------------
         # COVER
@@ -857,7 +1432,7 @@ def send_movie_email(films):
         if poster_path:
 
             poster_url = (
-                "https://image.tmdb.org/t/p/w300"
+                TMDB_POSTER_URL
                 + poster_path
             )
 
@@ -942,9 +1517,9 @@ def send_movie_email(films):
                 ">
                     <img
                         src="cid:{image_cid}"
-                        width="100"
+                        width="{POSTER_WIDTH}"
                         style="
-                            width:100px;
+                            width:{POSTER_WIDTH}px;
                             height:auto;
                             display:block;
                             border-radius:5px;
@@ -975,16 +1550,30 @@ def send_movie_email(films):
         # INFORMATIONEN
         # --------------------------------
 
+        safe_title = html.escape(
+            title
+        )
+
+        safe_channel = html.escape(
+            channel
+        )
+
+        safe_website = html.escape(
+            website,
+            quote=True
+        )
+
+
         html_parts.append(
 
             f"""
-            <div>
+            <div style="flex:1;">
 
                 <h3 style="
                     margin:0 0 8px 0;
                     font-size:18px;
                 ">
-                    {title}
+                    {safe_title}
                 </h3>
 
                 <div style="
@@ -995,7 +1584,7 @@ def send_movie_email(films):
 
                     <div>
                         <strong>Sender:</strong>
-                        {channel}
+                        {safe_channel}
                     </div>
 
                     <div>
@@ -1014,7 +1603,7 @@ def send_movie_email(films):
                 f"""
                     <div>
                         <strong>Jahr:</strong>
-                        {year}
+                        {html.escape(str(year))}
                     </div>
                 """
 
@@ -1023,21 +1612,147 @@ def send_movie_email(films):
 
         if rating is not None:
 
+            formatted_votes = (
+                f"{votes:,}"
+                .replace(",", ".")
+            )
+
+
             html_parts.append(
 
                 f"""
                     <div>
                         <strong>TMDB:</strong>
                         {rating:.1f}/10
-                        &nbsp; ({votes:,} Bewertungen)
+                        &nbsp;
+                        ({formatted_votes}
+                        Bewertungen)
                     </div>
-                """.replace(
-                    ",",
-                    "."
-                )
+                """
 
             )
 
+
+        # --------------------------------
+        # IMDb LINK
+        # --------------------------------
+
+        if imdb_url:
+
+            safe_imdb_url = html.escape(
+                imdb_url,
+                quote=True
+            )
+
+
+            html_parts.append(
+
+                f"""
+                    <div style="
+                        margin-top:6px;
+                    ">
+                        <a
+                            href="{safe_imdb_url}"
+                            style="
+                                color:#0066cc;
+                                text-decoration:none;
+                            "
+                        >
+                            ⭐ IMDb öffnen
+                        </a>
+                    </div>
+                """
+
+            )
+
+
+        # --------------------------------
+        # TRAILER
+        # --------------------------------
+
+        if trailer_url:
+
+            safe_trailer_url = html.escape(
+                trailer_url,
+                quote=True
+            )
+
+
+            if (
+                trailer_language
+                == "de"
+            ):
+
+                trailer_label = (
+                    "🎬 Deutscher Trailer"
+                )
+
+            else:
+
+                trailer_label = (
+                    "🎬 Trailer"
+                )
+
+
+            html_parts.append(
+
+                f"""
+                    <div style="
+                        margin-top:8px;
+                    ">
+                        <a
+                            href="{safe_trailer_url}"
+                            style="
+                                color:#cc0000;
+                                text-decoration:none;
+                            "
+                        >
+                            {trailer_label}
+                        </a>
+                    </div>
+                """
+
+            )
+
+
+        # --------------------------------
+        # YOUTUBE SUCHLINK
+        # --------------------------------
+
+        if youtube_search_url:
+
+            safe_youtube_search_url = (
+                html.escape(
+                    youtube_search_url,
+                    quote=True
+                )
+            )
+
+
+            html_parts.append(
+
+                f"""
+                    <div style="
+                        margin-top:5px;
+                    ">
+                        <a
+                            href="{safe_youtube_search_url}"
+                            style="
+                                color:#0066cc;
+                                text-decoration:none;
+                            "
+                        >
+                            🔎 Weitere Trailer auf YouTube
+                        </a>
+                    </div>
+                """
+
+            )
+
+
+        # --------------------------------
+        # MEDIATHEK
+        # --------------------------------
 
         if website:
 
@@ -1048,10 +1763,11 @@ def send_movie_email(films):
                         margin-top:10px;
                     ">
                         <a
-                            href="{website}"
+                            href="{safe_website}"
                             style="
                                 color:#0066cc;
                                 text-decoration:none;
+                                font-weight:bold;
                             "
                         >
                             ▶ Film in der Mediathek öffnen
@@ -1087,8 +1803,8 @@ def send_movie_email(films):
             color:#888;
             font-size:12px;
         ">
-            Automatisch erstellt vom
-            Mediathek Monitor.
+            Automatisch erstellt von
+            MyMediathek Monitor.
         </div>
 
         </div>
@@ -1100,7 +1816,7 @@ def send_movie_email(films):
     )
 
 
-    html = "".join(
+    html_body = "".join(
         html_parts
     )
 
@@ -1110,7 +1826,7 @@ def send_movie_email(films):
     # ====================================
 
     msg.add_alternative(
-        html,
+        html_body,
         subtype="html"
     )
 
@@ -1664,6 +2380,25 @@ try:
                 ""
             )
 
+            imdb_id = tmdb.get(
+                "imdb_id"
+            )
+
+            trailer_url = tmdb.get(
+                "trailer_url",
+                ""
+            )
+
+            trailer_name = tmdb.get(
+                "trailer_name",
+                ""
+            )
+
+            trailer_language = tmdb.get(
+                "trailer_language",
+                ""
+            )
+
 
             print(
                 f"   TMDB: {tmdb_title}"
@@ -1695,6 +2430,47 @@ try:
                 f"   Bewertungen: "
                 f"{votes}"
             )
+
+
+            if imdb_id:
+
+                print(
+                    f"   IMDb: {imdb_id}"
+                )
+
+            else:
+
+                print(
+                    "   IMDb: keine ID"
+                )
+
+
+            if trailer_url:
+
+                print(
+                    f"   Trailer: "
+                    f"{trailer_name}"
+                )
+
+                print(
+                    f"   Trailer URL: "
+                    f"{trailer_url}"
+                )
+
+                if trailer_language == "de":
+
+                    print(
+                        "   Trailer-Sprache: "
+                        "Deutsch"
+                    )
+
+            else:
+
+                print(
+                    "   TMDB: kein Trailer"
+                )
+
+            print()
 
 
             # ----------------------------
@@ -1925,6 +2701,23 @@ try:
                 f"   Bewertungen: "
                 f"{tmdb.get('votes', 0)}"
             )
+
+
+            if tmdb.get("imdb_id"):
+
+                print(
+                    f"   IMDb: "
+                    f"{tmdb.get('imdb_id')}"
+                )
+
+
+            if tmdb.get("trailer_url"):
+
+                print(
+                    f"   Trailer: "
+                    f"{tmdb.get('trailer_url')}"
+                )
+
 
             print(
                 f"   Link: {website}"
