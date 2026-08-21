@@ -1323,5 +1323,65 @@
     "title": "Landesschau Baden-Württemberg vom 20.8.2026",
     "channel": "SWR",
     "first_seen": "2026-08-21"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-21-august-2026-mit-chiara-schoras-104": {
+    "title": "Volle Kanne vom 21. August 2026 (S2026/E157)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.zdf.de/video/filme/booksmart-movie-100/booksmart-100": {
+    "title": "Booksmart",
+    "channel": "ZDF",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80NjkwMjQtNDQ5MzI5": {
+    "title": "12 heißt: Ich liebe dich",
+    "channel": "MDR",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS8wMmE4YWEzMi04NDc0LTQzYTUtOWZlNy1iYjc2ODQ5NmNmMGNfZ2FuemVTZW5kdW5n": {
+    "title": "Die Katzenfrau",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-20-august-2026-100": {
+    "title": "Markus Lanz vom 20. August 2026 (S2026/E88)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/ZmMxYTg1NGYtYzljNi00OWYyLWFlMWUtYTJiM2RjZDA5YjYw": {
+    "title": "Europa Open Air 2026",
+    "channel": "HR",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y2VlNjQ0YWMtNDYyZS00NWNkLWIyYzItNmQzNjJkZDYwZGVm": {
+    "title": "Europa Open Air 2026",
+    "channel": "HR",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.zdf.de/filme/disconnect-movie-100": {
+    "title": "Disconnect (Englisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvMTc0YTBhZGQtODRiMi00MjUzLTgwODMtYmIxYWM0M2E4NDFl": {
+    "title": "1. Etappe - Das Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2MwN2UwODIxLWQzNGItNDYxZC05Y2Q5LTJhYjk4OTQyYjJjNl9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Der falsche Tote – Der Amsterdam-Krimi (9)",
+    "channel": "ARD",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.zdf.de/filme/tiny-wedding---unsere-mega-kleine-hochzeit-movie-100": {
+    "title": "Tiny Wedding - Unsere mega kleine Hochzeit",
+    "channel": "ZDF",
+    "first_seen": "2026-08-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80NTc2NDctNDM4MDI3": {
+    "title": "Schwarzer Afghane",
+    "channel": "MDR",
+    "first_seen": "2026-08-21"
   }
 }
