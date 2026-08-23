@@ -1677,7 +1677,7 @@ def send_movie_email(films):
 
             )
 
-         if tmdb_title:
+        if tmdb_title:
 
             html_parts.append(
 
