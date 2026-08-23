@@ -15,6 +15,7 @@ from datetime import datetime
 
 MIN_DURATION = 70
 MAX_DURATION = 180
+MAX_RESULTS = 1000
 
 
 # ========================================
@@ -275,7 +276,7 @@ query = {
     "sortOrder": "desc",
     "future": False,
     "offset": 0,
-    "size": 1000,
+    "size": MAX_RESULTS,
     "duration_min": MIN_DURATION * 60
 }
 
