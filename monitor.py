@@ -1147,8 +1147,23 @@ def send_movie_email(films):
         tmdb = film.get(
             "_tmdb",
             {}
+        
+        )
+        
+        tmdb_title = tmdb.get(
+            "title",
+            ""
         )
 
+        original_title = tmdb.get(
+            "original_title",
+            ""
+        )
+
+        tmdb_id = tmdb.get(
+            "id"
+        )
+        
         rating = tmdb.get(
             "rating"
         )
@@ -1201,14 +1216,30 @@ def send_movie_email(films):
 
             text_lines.append(
                 f"   Jahr: {year}"
-            )
+        )
 
+        if tmdb_title:
+            
+            text_lines.append(
+                f"   TMDB-Titel: {tmdb_title}"
+        )
+
+        if original_title:
+            
+            text_lines.append(
+                f"   Originaltitel: {original_title}"
+        )
+
+        if tmdb_id:
+            text_lines.append(
+                f"   TMDB-ID: {tmdb_id}"
+        )
 
         if rating is not None:
 
             text_lines.append(
                 f"   TMDB: {rating:.1f}/10"
-            )
+        )
 
 
         text_lines.append(
@@ -1378,6 +1409,20 @@ def send_movie_email(films):
             {}
         )
 
+        tmdb_title = tmdb.get(
+            "title",
+            ""
+        )
+
+        original_title = tmdb.get(
+            "original_title",
+            ""
+        )
+
+        tmdb_id = tmdb.get(
+            "id"
+        )
+                
         rating = tmdb.get(
             "rating"
         )
@@ -1631,6 +1676,70 @@ def send_movie_email(films):
                 """
 
             )
+
+         if tmdb_title:
+
+            html_parts.append(
+
+               f"""
+                   <div>
+                       <strong>TMDB-Titel:</strong>
+                       {html.escape(str(tmdb_title))}
+                   </div>
+               """
+
+            )
+
+
+        if original_title:
+
+           html_parts.append(
+
+               f"""
+                   <div>
+                       <strong>Originaltitel:</strong>
+                       {html.escape(str(original_title))}
+                   </div>
+               """
+
+            )
+
+
+        if tmdb_id:
+
+           tmdb_url = (
+                       "https://www.themoviedb.org/movie/"
+                       + str(tmdb_id)
+            )
+
+           safe_tmdb_url = html.escape(
+                                       tmdb_url,
+                                       quote=True
+            )
+
+         html_parts.append(
+
+                f"""
+                     <div style="
+                     margin-top:6px;
+                     ">
+                     <strong>TMDB-ID:</strong>
+                     {html.escape(str(tmdb_id))}
+                     &nbsp;
+                     <a
+                      href="{safe_tmdb_url}"
+                      style="
+                      color:#0066cc;
+                      text-decoration:none;
+                      "
+                      >
+                      TMDB öffnen
+                      </a>
+                      </div>
+                """
+
+            )
+
 
 
         # --------------------------------
