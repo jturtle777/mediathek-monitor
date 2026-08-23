@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  MyMediathekMonitor:
     runs-on: ubuntu-latest
 
     steps:
