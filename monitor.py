@@ -1114,7 +1114,7 @@ def send_movie_email(films):
 
 
     msg["Subject"] = subject
-    msg["From"] = f"MyMediathek Monitor <{MAIL_USERNAME}>"
+    msg["From"] = f"Ranga Ralliii <{MAIL_USERNAME}>"
     msg["To"] = MAIL_TO
 
 
