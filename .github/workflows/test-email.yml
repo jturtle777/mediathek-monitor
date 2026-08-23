@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  tmdb-test:
+  test-email:
     runs-on: ubuntu-latest
 
     steps:
