@@ -1,1 +1,28 @@
+name: MVW Test
 
+on:
+  workflow_dispatch:
+
+jobs:
+  tmdb-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v5
+
+      - name: Python einrichten
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Requests installieren
+        run: pip install requests
+
+      - name: MVW testen
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python mvw_test.py  
