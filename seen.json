@@ -1638,5 +1638,15 @@
     "title": "Emma",
     "channel": "SWR",
     "first_seen": "2026-08-23"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIwMjc4Nzc": {
+    "title": "MPS - Die Legende lebt",
+    "channel": "SWR",
+    "first_seen": "2026-08-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxN1dPMDI2NzMwQTA": {
+    "title": "Lachende Wahrheit",
+    "channel": "BR",
+    "first_seen": "2026-08-24"
   }
 }
