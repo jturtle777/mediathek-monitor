@@ -1703,5 +1703,40 @@
     "title": "Feuer unterm Dach (4) - Zimmer mit Stall",
     "channel": "ARD",
     "first_seen": "2026-08-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNFdPMDA1NTg2QTA": {
+    "title": "Der große Zauber",
+    "channel": "BR",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzEwMDU1OTAwMV9nYW56ZVNlbmR1bmc": {
+    "title": "Alles wird gut",
+    "channel": "NDR",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.zdf.de/video/filme/subservience-movie-100/subservience-100": {
+    "title": "Subservience",
+    "channel": "ZDF",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZWI0OWZiODAtNjFkNS00NWM1LWE2NmItM2YyNTFjNmVjZjVh": {
+    "title": "Before Midnight",
+    "channel": "ONE",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNDU4ODA": {
+    "title": "Landesschau Baden-Württemberg vom 24.8.2026",
+    "channel": "SWR",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9jODIwNTk0Yy0xNTVjLTQ0ZDEtODZlMi02YjJmZTU2ZjMzYmFfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 24.08.2026",
+    "channel": "RBB",
+    "first_seen": "2026-08-25"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-24-august-2026-mit-mojib-latif-100": {
+    "title": "Volle Kanne vom 24. August 2026 (S2026/E158)",
+    "channel": "ZDF",
+    "first_seen": "2026-08-25"
   }
 }
