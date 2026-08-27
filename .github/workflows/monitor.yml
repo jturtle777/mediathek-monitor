@@ -3,21 +3,43 @@ name: Mediathek Monitor
 on:
   schedule:
     - cron: "0 */12 * * *"
-  
+
   workflow_dispatch:
+
+# Verhindert, dass mehrere Monitor-Läufe
+# gleichzeitig auf seen.json zugreifen.
+concurrency:
+  group: mediathek-monitor
+  cancel-in-progress: true
+
 
 jobs:
   MyMediathekMonitor:
     runs-on: ubuntu-latest
 
     steps:
+
+      # ========================================
+      # Repository herunterladen
+      # ========================================
+
       - name: Repository herunterladen
         uses: actions/checkout@v5
+
+
+      # ========================================
+      # Python installieren
+      # ========================================
 
       - name: Python installieren
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+
+      # ========================================
+      # Mediathek Monitor
+      # ========================================
 
       - name: Mediathek Monitor Script
         env:
@@ -26,15 +48,47 @@ jobs:
           MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
           MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
+
         run: python monitor.py
+
+
+      # ========================================
+      # seen.json speichern
+      # ========================================
 
       - name: Änderungen speichern
         run: |
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+
           git add seen.json
 
-          git diff --cached --quiet || git commit -m "Update seen.json"
 
-          git push
+          # Wenn sich nichts geändert hat,
+          # gibt es auch nichts zu committen.
+
+          if git diff --cached --quiet; then
+
+            echo "Keine Änderungen an seen.json."
+            exit 0
+
+          fi
+
+
+          # Änderung committen
+
+          git commit -m "Update seen.json"
+
+
+          # Eventuelle Änderungen auf GitHub
+          # zuerst holen und eigenen Commit
+          # darauf setzen.
+
+          git pull --rebase origin main
+
+
+          # Danach pushen
+
+          git push origin main
