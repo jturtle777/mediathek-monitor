@@ -1993,5 +1993,15 @@
     "title": "Die Wannseekonferenz",
     "channel": "ZDF",
     "first_seen": "2026-08-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNFdPMDA2NzY3QTA": {
+    "title": "Muxmäuschenstill X",
+    "channel": "BR",
+    "first_seen": "2026-08-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci11c2Vkb20ta3JpbWkvMjAyMy0xMS0yMV8yMC0xNS1NRVo": {
+    "title": "Schlepper – Der Usedom-Krimi",
+    "channel": "ARD",
+    "first_seen": "2026-08-27"
   }
 }
