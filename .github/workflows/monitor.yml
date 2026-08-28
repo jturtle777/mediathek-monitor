@@ -2,7 +2,7 @@ name: Mediathek Monitor
 
 on:
   schedule:
-   - cron: "30 1,14 * * *"
+   - cron: "45 9,21 * * *"
 
   workflow_dispatch:
 
