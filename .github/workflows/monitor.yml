@@ -1,9 +1,7 @@
 name: Mediathek Monitor
 
 on:
-  schedule:
-   - cron: "0 */1 * * *"
-
+  
   workflow_dispatch:
 
 # Verhindert, dass mehrere Monitor-Läufe
