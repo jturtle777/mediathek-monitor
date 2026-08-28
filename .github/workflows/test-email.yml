@@ -1,6 +1,8 @@
 name: E-Mail Test
 
 on:
+  schedule:
+    - cron: "15 19 * * *"
   workflow_dispatch:
 
 jobs:
