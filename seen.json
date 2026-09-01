@@ -2483,5 +2483,70 @@
     "title": "Die nördliche Bretagne",
     "channel": "ARD",
     "first_seen": "2026-08-31"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0wMy0yNF8wMS00NS1NRVo": {
+    "title": "Die Erntehelferin",
+    "channel": "ARD",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2RpZS1kcmVpLXZvbi1kZXItbXVlbGxhYmZ1aHIvMjAxOS0wNC0wNV8yMC0xNS1NRVNa": {
+    "title": "Baby an Bord – Die Drei von der Müllabfuhr (2)",
+    "channel": "ARD",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/video/filme/the-silent-hour-movie-100/the-silent-hour-100": {
+    "title": "The Silent Hour (Englisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/filme/subservience-movie-100": {
+    "title": "Subservience",
+    "channel": "ZDF",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLWZjOTQ1MGNiLWEzNDUtNDI5My04ZWQ1LWI5YWMyZjIwNWQ2OS9hdWRpb2Rlc2tyaXB0aW9u": {
+    "title": "Liebe mich! (2022)",
+    "channel": "WDR",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC84NWJiMzk5YS0xMDcxLTQxNWYtOTM3NS0wOWIzNDcyZjNkMWFfb25saW5lYnJvYWRjYXN0L2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Die Nacht gehört dir",
+    "channel": "BR",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZDkwZTgwZmQtZTE5OC00YjcyLTkzZmQtMDk1Mzc0MjA1M2JhL2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Wacht am Rhein (2017)",
+    "channel": "WDR",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9hMjE3N2U4My1lM2QzLTQ4MmMtOGUzMy05OWMzMjk0MTQ1M2VfcHVibGljYXRpb24vYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Gegen den Kopf",
+    "channel": "RBB",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/filme/insidious-chapter-2-movie-100": {
+    "title": "Insidious: Chapter 2",
+    "channel": "ZDFneo",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzg5NDZkNDg0LThlYzItNGIwYS05NTZjLTc4ZDVlODMxOWVlMF9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Lebendig begraben | Der Wien-Krimi: Blind ermittelt",
+    "channel": "ARD",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/filme/der-exorzismus-von-emily-rose-movie-100": {
+    "title": "Der Exorzismus von Emily Rose",
+    "channel": "ZDFneo",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/filme/dora-heldt-ausgeliebt-movie-100": {
+    "title": "Dora Heldt: Ausgeliebt",
+    "channel": "ZDF",
+    "first_seen": "2026-09-01"
+  },
+  "https://www.zdf.de/filme/dora-heldt-kein-wort-zu-papa-movie-100": {
+    "title": "Dora Heldt: Kein Wort zu Papa",
+    "channel": "ZDF",
+    "first_seen": "2026-09-01"
   }
 }
