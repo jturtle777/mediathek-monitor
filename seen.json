@@ -2593,5 +2593,55 @@
     "title": "Volle Kanne vom 1. September 2026 (S2026/E164)",
     "channel": "ZDF",
     "first_seen": "2026-09-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0wMy0wMl8xNC0wMy1NRVo": {
+    "title": "Mann gesucht, Liebe gefunden",
+    "channel": "ARD",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNC0wNS0xMl8xNS0zMC1NRVNa": {
+    "title": "Kurhotel Alpenglück",
+    "channel": "ARD",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2RpZS1kcmVpLXZvbi1kZXItbXVlbGxhYmZ1aHIvMjAyMS0wOC0wNl8yMC0xNS1NRVNa": {
+    "title": "Mission Zukunft (3) – Die Drei von der Müllabfuhr",
+    "channel": "ARD",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.zdfheute.de/politik/lanz-wildberger-lobo-russland-technologie-ki-100.html": {
+    "title": "Wildberger: \"Wir schlafen auch nicht auf dem Baum\"",
+    "channel": "ZDF",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci1hbXN0ZXJkYW1rcmltaS8yMDI1LTEyLTA2XzIzLTQwLU1FWi9hdWRpb2Rlc2tyaXB0aW9u": {
+    "title": "Das verschwundene Kind – Der Amsterdam-Krimi (4)",
+    "channel": "ARD",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-1-september-2026-100": {
+    "title": "Markus Lanz vom 1. September 2026 (S2026/E92)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.zdf.de/filme/an-einem-tag-im-september-movie-100": {
+    "title": "An einem Tag im September",
+    "channel": "ZDF",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.zdf.de/dokus/born-in-evin-movie-100": {
+    "title": "Born in Evin",
+    "channel": "ZDF",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.zdf.de/filme/vesper-chronicles-movie-100": {
+    "title": "Vesper Chronicles (Englisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2JkMzdlZGM1LTQ5MmYtNGFlZS04OGY2LTU5NzA0MzcxOWE4MV9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Tatort: Das Haus am Ende der Straße",
+    "channel": "ARD",
+    "first_seen": "2026-09-02"
   }
 }
