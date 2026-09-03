@@ -2673,5 +2673,55 @@
     "title": "Volle Kanne vom 2. September 2026 (S2026/E165)",
     "channel": "ZDF",
     "first_seen": "2026-09-02"
+  },
+  "https://www.zdfheute.de/politik/deutschland/lanz-herrmann-lau-merz-cdu-afd-landtagswahl-sachsen-anhalt-100.html": {
+    "title": "Publizistin Herrmann sieht Ende der Ära Merz - Lau widerspricht",
+    "channel": "ZDF",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzY3NGU5MjU2LTI4YjEtNGRiYS1iNDZlLTMxMjkyYmNhYmI2OV9nYW56ZVNlbmR1bmc": {
+    "title": "Das Botschaftsattentat – Die Diplomatin",
+    "channel": "ARD",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZGIwOTNmYzktNmMyYy00NjFjLTlkYzEtOWZhNmU5ODFkZGE5": {
+    "title": "Agatha und der Fluch von Ischtar",
+    "channel": "ONE",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-2-september-2026-100": {
+    "title": "Markus Lanz vom 2. September 2026 (S2026/E93)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvYWI2ZGZhYjAtY2RhNC00NjY0LWFjZWUtYWUxYjdkNjgxYWQ5": {
+    "title": "WUMMS kommentiert Osnabrück gegen Bayern München - Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvYTg1MWI5ZDgtOTFlZC00NTE3LWE5OTItODUxNzkyYWE2ZTBk": {
+    "title": "VfL Osnabrück gegen Bayern München im Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.zdf.de/filme/geranien-movie-100": {
+    "title": "Geranien",
+    "channel": "ZDF",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci11c2Vkb20ta3JpbWkvMjAyMy0xMS0yMV8yMC0xNS1NRVovYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Schlepper – Der Usedom-Krimi",
+    "channel": "ARD",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.zdf.de/filme/street-fighter---die-entscheidende-schlacht-movie-102": {
+    "title": "Street Fighter - Die entscheidende Schlacht",
+    "channel": "ZDFneo",
+    "first_seen": "2026-09-03"
+  },
+  "https://www.zdf.de/filme/die-abraeumer-movie-100": {
+    "title": "Die Abräumer",
+    "channel": "ZDF",
+    "first_seen": "2026-09-03"
   }
 }
