@@ -3213,5 +3213,55 @@
     "title": "Schwiegermutter im Anflug (6) - Zimmer mit Stall",
     "channel": "ARD",
     "first_seen": "2026-09-07"
+  },
+  "https://www.zdf.de/video/filme/bis-es-blutet-movie-100/bis-es-blutet-100": {
+    "title": "Bis es blutet",
+    "channel": "ZDF",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC84YjBlMDYwMS1mZmViLTQzZTQtOTE1Yy1jMTM2MjM2M2ZjNDJfb25saW5lYnJvYWRjYXN0": {
+    "title": "Last Contact",
+    "channel": "BR",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzY3YzVlODUzLWZhZTMtNDJjZC1iZGZmLTc0MmFkMjRmMWJlMl9nYW56ZVNlbmR1bmc": {
+    "title": "Tief im Wald | Wolfsland",
+    "channel": "ARD",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzE5NjI3MjAyNF9nYW56ZVNlbmR1bmc": {
+    "title": "Die Welt wird eine andere sein",
+    "channel": "NDR",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtODBlOTgxOGYtNTI4Ny00NDhlLWI3YzUtNjc2ZDkyMWI0OGIz": {
+    "title": "Nach der Wahl: Wie verändert Sachsen-Anhalt Deutschland?",
+    "channel": "WDR",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtNWNmNjRkNzgtYzRkNS00YTVhLTk5NGItMmE1MTZmMjEwNzBj": {
+    "title": "Artificial Justice - Tödliche Gerechtigkeit",
+    "channel": "ONE",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNDkwMDE": {
+    "title": "Landesschau Baden-Württemberg vom 7.9.2026",
+    "channel": "SWR",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl82OTViZjI5Ny03ZWQ4LTQxZjAtYjllNC01YzU4ZmI0N2FkZDBfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 07.09.2026",
+    "channel": "RBB",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.zdfheute.de/politik/deutschland/merz-sachsen-anhalt-pressekonferenz-100.html": {
+    "title": "Merz: Wahlergebnis in Sachsen-Anhalt \"schockiert\"",
+    "channel": "ZDF",
+    "first_seen": "2026-09-07"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-7-september-2026-mit-max-von-der-groeben-102": {
+    "title": "Volle Kanne vom 7. September 2026 (S2026/E168)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-07"
   }
 }
