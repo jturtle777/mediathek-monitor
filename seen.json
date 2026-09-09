@@ -3343,5 +3343,40 @@
     "title": "DER TAG in Berlin & Brandenburg vom 08.09.2026",
     "channel": "RBB",
     "first_seen": "2026-09-08"
+  },
+  "https://www.zdf.de/video/magazine/zdfheute-live-102/bundestags-debatte-haushalt-2027-100": {
+    "title": "Generaldebatte live: Abrechnung mit Merz?",
+    "channel": "ZDF",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.zdfheute.de/politik/deutschland/lanz-sepp-mueller-landtagswahl-sachsen-anhalt-cdu-afd-100.html": {
+    "title": "Sepp Müller bei \"Lanz\": CDU hat Vertrauen der Wähler verloren",
+    "channel": "ZDF",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-8-september-2026-100": {
+    "title": "Markus Lanz vom 8. September 2026 (S2026/E96)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.zdf.de/filme/ein-regenbogen-zu-weihnachten-movie-100": {
+    "title": "Ein Regenbogen zu Weihnachten",
+    "channel": "ZDF",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.zdf.de/dokus/soldaten-des-lichts-movie-100": {
+    "title": "Soldaten des Lichts",
+    "channel": "ZDF",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzY3NGU5MjU2LTI4YjEtNGRiYS1iNDZlLTMxMjkyYmNhYmI2OV9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Das Botschaftsattentat – Die Diplomatin",
+    "channel": "ARD",
+    "first_seen": "2026-09-09"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2RpZS1kcmVpLXZvbi1kZXItbXVlbGxhYmZ1aHIvMjAxOS0wMy0yOV8yMC0xNS1NRVovYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Dörte muss weg – Die Drei von der Müllabfuhr (1)",
+    "channel": "ARD",
+    "first_seen": "2026-09-09"
   }
 }
