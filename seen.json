@@ -3468,5 +3468,30 @@
     "title": "Verachtung",
     "channel": "ZDF",
     "first_seen": "2026-09-10"
+  },
+  "https://www.zdf.de/video/serien/das-traumschiff-104/singapurbali-102": {
+    "title": "Singapur/Bali",
+    "channel": "ZDF",
+    "first_seen": "2026-09-11"
+  },
+  "https://www.zdf.de/video/serien/das-traumschiff-104/bangkok-112": {
+    "title": "Bangkok (S2026/E01)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-11"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-mit-oliver-masucci-und-vito-wiesner-vom-11-september-2026-100": {
+    "title": "Volle Kanne vom 11. September 2026 (S2026/E172)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-11"
+  },
+  "https://www.zdf.de/video/filme/the-founder-movie-100/the-founder-100": {
+    "title": "The Founder",
+    "channel": "ZDF",
+    "first_seen": "2026-09-11"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzE5NjM4OTEzMl9nYW56ZVNlbmR1bmc": {
+    "title": "Deutscher Radiopreis 2026",
+    "channel": "NDR",
+    "first_seen": "2026-09-11"
   }
 }
