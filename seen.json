@@ -3868,5 +3868,50 @@
     "title": "Homeshoppers Paradise",
     "channel": "SWR",
     "first_seen": "2026-09-14"
+  },
+  "https://www.zdf.de/video/filme/in-die-sonne-schauen-movie-100/in-die-sonne-schauen-106": {
+    "title": "In die Sonne schauen",
+    "channel": "ZDF",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL3RhdG9ydC8yMDIzLTAxLTI3XzIyLTIwLU1FWg": {
+    "title": "Das Herz der Schlange",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2RhZDEzMTJiLTcwMWMtNDEwNC1iNWZhLTc3ZTkxYTI2ZjNhZl9nYW56ZVNlbmR1bmc": {
+    "title": "Der steinerne Gast | Wolfsland",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy9kMTBjMmIwOC1iM2Y2LTQ4OTYtYjZlOC0yZDM2OTkxYTE1Mjc": {
+    "title": "Verführung",
+    "channel": "MDR",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2Q3Y2FhZGI3LTc2OWQtNDFlMS05MzQ2LTUxZjFlOGRjNDYyMV9nYW56ZVNlbmR1bmc": {
+    "title": "Die Faust",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtYjM1Y2M5MTQtMzZjNy00ZTAyLTgyMmItMTZhZWJkYWEzZmQz": {
+    "title": "Wilder Diamant",
+    "channel": "ONE",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNTA0Mzc": {
+    "title": "Landesschau Baden-Württemberg vom 14.9.2026",
+    "channel": "SWR",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC83ODQzNTVjNy04OGIzLTQ4NzMtYjAxNy01YTEyMzI4ZmRmODlfb25saW5lYnJvYWRjYXN0": {
+    "title": "Checker Tobi und die Reise zu den fliegenden Flüssen · Der Film",
+    "channel": "BR",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzA4OTdmMDc1LTEwMTMtNGFjMC1hMDRjLTg0ZTg2YmU5YTA3NF9nYW56ZVNlbmR1bmc": {
+    "title": "Monsieur Claude und seine Töchter",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
   }
 }
