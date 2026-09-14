@@ -3818,5 +3818,55 @@
     "title": "Sieben Leben",
     "channel": "ZDFneo",
     "first_seen": "2026-09-13"
+  },
+  "https://www.zdf.de/filme/erwartung-movie-100": {
+    "title": "Erwartung(dan)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvYTdhMjFlYWItMmJkMC00NDcyLWI1NmYtZmNjMDIyMDAxODQx": {
+    "title": "Ultimate Championship - der dritte Tag im Re-Live",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzY3YzVlODUzLWZhZTMtNDJjZC1iZGZmLTc0MmFkMjRmMWJlMl9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Tief im Wald | Wolfsland",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2RpZS1kcmVpLXZvbi1kZXItbXVlbGxhYmZ1aHIvMjAyNS0wNC0xOV8xNS0zMC1NRVNaL2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Operation Miethai – Die Drei von der Müllabfuhr (6)",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzAyZDIxODNmLTYxZjctNGRlMS05ZTYwLTljZTgyY2MxMTNlYV9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Tote schlafen schlecht | Wolfsland",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2tyaW1pLWF1cy1wYXNzYXUtLzIwMjItMDYtMjNfMjAtMTUtTUVTWi9hdWRpb2Rlc2tyaXB0aW9u": {
+    "title": "Freund oder Feind. Ein Krimi aus Passau",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2Q0NjA0ODE0LTM4OGEtNGNlNi1hY2E5LTU2MzNmNmQxNDc2N19nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Der Wien-Krimi: Blind ermittelt - Die nackte Kaiserin",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzEzOWE4ODQzLTA3YmUtNGE0MS05MTA4LWNiNmM2N2ZkYWFkM19nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Die Versuchung – Harter Brocken",
+    "channel": "ARD",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC81NTQ4ODEtNDc2Mzk2L2dlYmFlcmRlbnNwcmFjaGU": {
+    "title": "Wer reißt denn gleich vorm Teufel aus (Gebärdensprache)",
+    "channel": "MDR",
+    "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzE5NzEwNTEvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Homeshoppers Paradise",
+    "channel": "SWR",
+    "first_seen": "2026-09-14"
   }
 }
