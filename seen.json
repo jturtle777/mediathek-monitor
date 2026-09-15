@@ -3913,5 +3913,30 @@
     "title": "Monsieur Claude und seine Töchter",
     "channel": "ARD",
     "first_seen": "2026-09-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyMy0wOC0xOV8xNC0wMC1NRVNa": {
+    "title": "Anderst schön",
+    "channel": "ARD",
+    "first_seen": "2026-09-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyMy0wMS0wOF8xNC0wMy1NRVo": {
+    "title": "Dann kam Lucy",
+    "channel": "ARD",
+    "first_seen": "2026-09-15"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne---service-taeglich-vom-15-september-2026-100": {
+    "title": "Volle Kanne vom 15. September 2026 (S2026/E174)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyMFdPMDA1Mzc1QTA": {
+    "title": "Windstill",
+    "channel": "BR",
+    "first_seen": "2026-09-15"
+  },
+  "https://www.zdf.de/filme/night-call---ueberlebe-die-nacht-movie-100": {
+    "title": "Night Call - Überlebe die Nacht (Französisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-09-15"
   }
 }
