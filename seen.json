@@ -5763,5 +5763,15 @@
     "title": "Hol dir deine Show!",
     "channel": "MDR",
     "first_seen": "2026-09-28"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0xMC0wNV8xMy00NS1NRVNa": {
+    "title": "Wer zu lieben wagt",
+    "channel": "ARD",
+    "first_seen": "2026-09-29"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL3V0dGEtZGFuZWxsYS8yMDI0LTA0LTI4XzE1LTMwLU1FU1o": {
+    "title": "Das Familiengeheimnis (2) – Utta Danella",
+    "channel": "ARD",
+    "first_seen": "2026-09-29"
   }
 }
