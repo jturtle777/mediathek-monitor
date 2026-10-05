@@ -6418,5 +6418,25 @@
     "title": "DogMan",
     "channel": "ZDF",
     "first_seen": "2026-10-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2VmOGUzOTVmLWUxOTEtNGE1Zi1hZDllLTc4NjFlOTY3YzIzYl9nYW56ZVNlbmR1bmc": {
+    "title": "Eine mit Herz – Familiengeheimnisse",
+    "channel": "ARD",
+    "first_seen": "2026-10-05"
+  },
+  "https://www.zdf.de/filme/tornado-movie-100": {
+    "title": "Tornado (Englisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-10-05"
+  },
+  "https://www.zdf.de/video/serien/das-traumschiff-104/walvis-bay-100": {
+    "title": "Walvis Bay (S36/E01)",
+    "channel": "ZDF",
+    "first_seen": "2026-10-05"
+  },
+  "https://www.zdf.de/video/shows/zdf-fernsehgarten-104/260927-sendung-fsg-100": {
+    "title": "Finalparty (S2026/E21)",
+    "channel": "ZDF",
+    "first_seen": "2026-10-05"
   }
 }
