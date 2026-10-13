@@ -7388,5 +7388,50 @@
     "title": "MDR um 4 vom 9. Oktober",
     "channel": "MDR",
     "first_seen": "2026-10-12"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNC0wNS0yMF8xMy00MC1NRVNa": {
+    "title": "Urlaub mit kleinen Folgen",
+    "channel": "ARD",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNC0xMC0yMF8xNC0wMy1NRVNa": {
+    "title": "Zwei Millionen suchen einen Vater",
+    "channel": "ARD",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtOGU3YzU3YTAtZTYwZC00MjZlLWE1NWItZjM5YmI3N2E3ZTE0": {
+    "title": "Starke Ränder, schwache Mitte: Bleibt das jetzt so?",
+    "channel": "WDR",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.zdf.de/filme/ich-verstehe-ihren-unmut-movie-100": {
+    "title": "Ich verstehe Ihren Unmut",
+    "channel": "ZDF",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci11c2Vkb20ta3JpbWkvMjAyMS0xMS0wOF8yMC0xNS1NRVovYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Ungebetene Gäste - Der Usedom-Krimi",
+    "channel": "ARD",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Rlci1hbXN0ZXJkYW1rcmltaS8yMDI1LTEyLTE0XzAwLTEwLU1FWi9hdWRpb2Rlc2tyaXB0aW9u": {
+    "title": "Das Mädchen ohne Namen – Der Amsterdam-Krimi (5)",
+    "channel": "ARD",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyMVdPMDMxODQyQTAvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Wunder gibt es immer wieder",
+    "channel": "BR",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80NzA1MDEtNDUwODA0L2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Nasse Sachen",
+    "channel": "MDR",
+    "first_seen": "2026-10-13"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyMy0wMS0yOF8xNC0wMC1NRVovYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Tag für Tag – Hotel Heidelberg",
+    "channel": "ARD",
+    "first_seen": "2026-10-13"
   }
 }
