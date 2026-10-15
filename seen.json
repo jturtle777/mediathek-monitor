@@ -7593,5 +7593,35 @@
     "title": "Alice im Weihnachtsland",
     "channel": "ZDF",
     "first_seen": "2026-10-14"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNC0xMi0yN18xNS0zMC1NRVo": {
+    "title": "Schwarzbrot in Thailand",
+    "channel": "ARD",
+    "first_seen": "2026-10-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNFdPMDA5NTIyQTA": {
+    "title": "Bad Tales · Es war einmal ein Traum (Originalversion)",
+    "channel": "BR",
+    "first_seen": "2026-10-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNFdPMDA5NjgwQTA": {
+    "title": "Elfriede Jelinek · Die Sprache von der Leine lassen",
+    "channel": "BR",
+    "first_seen": "2026-10-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNTczNzMvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Bienzle und der tiefe Sturz",
+    "channel": "SWR",
+    "first_seen": "2026-10-15"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9lNTA4ZWQ3Zi1jYWZiLTQzNjQtYmUzNy0zMTM0YjQ4ZmMwMGVfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 14.10.2026",
+    "channel": "RBB",
+    "first_seen": "2026-10-15"
+  },
+  "https://www.zdf.de/filme/du-lebst-noch-24-stunden-movie-100": {
+    "title": "Du lebst noch 24 Stunden",
+    "channel": "ZDF",
+    "first_seen": "2026-10-15"
   }
 }
