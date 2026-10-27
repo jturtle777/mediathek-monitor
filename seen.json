@@ -8853,5 +8853,45 @@
     "title": "Unter Feinden",
     "channel": "NDR",
     "first_seen": "2026-10-26"
+  },
+  "https://www.zdf.de/video/filme/frisch-movie-100/frisch-102": {
+    "title": "Frisch - Basierend auf dem Roman \"Fresh\" von Mark McNay",
+    "channel": "ZDF",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2tyaW1pcy1pbS1lcnN0ZW4vMjAyMy0wNC0xM18yMC0xNS1NRVNa": {
+    "title": "Blutlinie – Der Dänemark-Krimi",
+    "channel": "ARD",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.zdf.de/video/filme/longlegs-movie-100/longlegs-100": {
+    "title": "Longlegs",
+    "channel": "ZDF",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtNzdlMjY4NDYtODBiOS00MTFhLWIzZjUtMmE2ZTdjYmE2N2E3": {
+    "title": "Tully",
+    "channel": "ONE",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl85YzJlYzIzOC02MDFiLTQxOGMtODJlZC01NzU2NjdlMTI2MjJfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 26.10.2026",
+    "channel": "RBB",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-26-oktober-2026-mit-winnie-heescher-100": {
+    "title": "Volle Kanne vom 26. Oktober 2026 (S2026/E203)",
+    "channel": "ZDF",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.zdf.de/video/filme/der-hexenclub-movie-100/der-hexenclub-100": {
+    "title": "Der Hexenclub (Englisch)",
+    "channel": "ZDFneo",
+    "first_seen": "2026-10-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNTk5ODk": {
+    "title": "Schlager-Spaß mit Andy Borg",
+    "channel": "SWR",
+    "first_seen": "2026-10-27"
   }
 }
