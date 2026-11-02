@@ -9413,5 +9413,75 @@
     "title": "Der Hexenclub",
     "channel": "ZDFneo",
     "first_seen": "2026-11-01"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtYjlmYTdjMmUtOTYzNC00NzZlLTkwNDYtYzVlNmRjMzc4OGEw": {
+    "title": "Die Akademie",
+    "channel": "WDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzQ4YTIxNTc4LWQ4M2MtNGYwYi04Yzg0LWRlOGI3MDkzOWI2OF9nYW56ZVNlbmR1bmc": {
+    "title": "Grießnockerlaffäre",
+    "channel": "ARD",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.zdfheute.de/politik/deutschland/gen-z-proteste-deutschland-liveblog-100.html": {
+    "title": "Gen-Z-Demos und Krawalle: Das Wochende zum Nachlesen",
+    "channel": "ZDF",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAyNldPMDA1NDY2QTE": {
+    "title": "Christophe Dumaux beim Bayreuth Baroque Opera Festival",
+    "channel": "BR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9mMDUzYjdmYi0zNDQ5LTQyY2MtYWQxNC1lMzY1YzM2MjE1YmQ": {
+    "title": "Sie haben Namen (Gebärdensprache)",
+    "channel": "NDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZWE2NTVhOGItNjE0Mi00N2ViLWJmZDAtNjU0NWY3ZmQwOTQy": {
+    "title": "Magisches Island – Roadtrip durch den Südwesten",
+    "channel": "WDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8wNzZmNTRiMy1hNTUzLTRmNjYtYjJmOC1hZThlMzk5YzgwYzI": {
+    "title": "Feldberger Seen – Naturparadies Mecklenburg",
+    "channel": "MDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3Nwb3J0c2NoYXUuZGUvNGY5MGI0NzQtYjYxMi00Y2FhLWE0MjgtN2E2MDZhZGNlYTc1": {
+    "title": "Deutsche Meisterschaften im Lead-Klettern",
+    "channel": "ARD",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MTA2MC8yMDI2MDUxNDA2NTAvZWluemVsc3R1ZWNrLW1kci1kYXMtZXJzdGUtMTgw": {
+    "title": "Die Geschichte vom kleinen Muck (Gebärdensprache)",
+    "channel": "MDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzRhZTZiMjY4LWRiZDEtNGQxNC05MzYwLTE4ODEyOWE1NGVkOV9nYW56ZVNlbmR1bmc": {
+    "title": "Hochzeit in Rom",
+    "channel": "ARD",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3NyLW9ubGluZS5kZS9TQV8xNzYxNTg": {
+    "title": "Süd-West-Derby am Feiertag: 1. FC Saarbrücken trifft auf Waldhof Mannheim",
+    "channel": "SR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.zdf.de/video/magazine/zdfheute-live-102/ausschreitungen-gen-z-proteste-nacht-video-100": {
+    "title": "Krawalle nach Gen-Z-Protesten",
+    "channel": "ZDF",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS8wNTAxMTM2OC1kODZiLTQ4ZDUtODkwMy0xNTQ5ZTdlNzMyYWY": {
+    "title": "Der Start der Route du Rhum im Re-Live",
+    "channel": "NDR",
+    "first_seen": "2026-11-02"
+  },
+  "https://www.sr-mediathek.de/index.php?seite=7&id=176158": {
+    "title": "Süd-West-Derby am Feiertag: 1. FC Saarbrücken trifft auf Waldhof Mannheim",
+    "channel": "SR",
+    "first_seen": "2026-11-02"
   }
 }
