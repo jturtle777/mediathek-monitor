@@ -9588,5 +9588,40 @@
     "title": "Volle Kanne vom 2. November 2026 (S2026/E208)",
     "channel": "ZDF",
     "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEX2JiZGNkNGIxLTE4M2EtNDkzYi1iODFhLTZlYTg5N2VkYTc5Yl9nYW56ZVNlbmR1bmc": {
+    "title": "Immer wieder anders",
+    "channel": "ARD",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0xMC0wM18xMi0wMC1NRVNa": {
+    "title": "Opa, ledig, jung",
+    "channel": "ARD",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzA4MTgxNWQ0LWJmOTEtNGE2Mi1hMTJiLWU4NjgwYWRlNDM2OF9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Daheim in den Bergen (12) – Schulter an Schulter",
+    "channel": "ARD",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.zdf.de/filme/eternal-movie-100": {
+    "title": "Eternal",
+    "channel": "ZDF",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9lOTU5NGYyMy02MjUzLTQ1OTUtYTBiZS1lYTRkMmRmNDdiZmFfb25saW5lYnJvYWRjYXN0L2dlYmFlcmRlbnNwcmFjaGU": {
+    "title": "Gottesgarten (Gebärdensprache)",
+    "channel": "BR",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80MDcxNjUtMzg3NjAwL2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Die Eifel",
+    "channel": "MDR",
+    "first_seen": "2026-11-03"
+  },
+  "https://www.zdf.de/filme/vanished---tage-der-angst-movie-100": {
+    "title": "Vanished - Tage der Angst",
+    "channel": "ZDF",
+    "first_seen": "2026-11-03"
   }
 }
