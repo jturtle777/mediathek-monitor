@@ -9623,5 +9623,50 @@
     "title": "Vanished - Tage der Angst",
     "channel": "ZDF",
     "first_seen": "2026-11-03"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL2Zlcm5zZWhmaWxtZSBpbSBlcnN0ZW4vMjAyNS0wNC0yMF8xMi0zMC1NRVNa": {
+    "title": "Liebe ist das schönste Geschenk",
+    "channel": "ARD",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9kYTJhNmJkYS00MGQ0LTQ3ZjUtYTMwYS0zNjI5ZWE0ZjdkM2VfcHVibGljYXRpb24": {
+    "title": "Oxygen Station",
+    "channel": "RBB",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9jZjJkMDVlYS1lNmIwLTRhZmItOTBiYS0xMGQzZmRjNGE4MGM": {
+    "title": "Der Reichstag - Geschichte eines deutschen Hauses",
+    "channel": "NDR",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2Rhc2Vyc3RlLmRlL3RhdG9ydF8yMDI0LTAyLTEzLTIyLTAw": {
+    "title": "Borowski und das Haus der Geister",
+    "channel": "NDR",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzcyMmJhNDdhLTMyY2YtNDYyNi1iYjNmLTcyYzdlYjAwNWM1Yl9nYW56ZVNlbmR1bmc": {
+    "title": "Tatort: Wehrlos",
+    "channel": "ARD",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNjIzNDY": {
+    "title": "Landesschau Baden-Württemberg vom 3.11.2026",
+    "channel": "SWR",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.zdf.de/video/magazine/zdfheute-live-102/selenskyj-berlin-pk-video-100": {
+    "title": "Selenskyj in Berlin",
+    "channel": "ZDF",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-mit-louis-philippson-vom-3-november-2026-100": {
+    "title": "Volle Kanne vom 3. November 2026 (S2026/E209)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-04"
+  },
+  "https://www.zdf.de/video/filme/spielfilm-104/fabian-116": {
+    "title": "Fabian",
+    "channel": "ZDF",
+    "first_seen": "2026-11-04"
   }
 }
