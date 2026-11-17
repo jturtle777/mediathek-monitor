@@ -10918,5 +10918,45 @@
     "title": "Domino",
     "channel": "ZDFneo",
     "first_seen": "2026-11-16"
+  },
+  "https://www.zdf.de/video/filme/hysteria-movie-100/hysteria-106": {
+    "title": "Hysteria",
+    "channel": "ZDF",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl81NDMyYjM3OS03MmUyLTRiNDEtYWU5Yy04MWIyOGZmMDc0YjZfcHVibGljYXRpb24": {
+    "title": "Eine nette Person",
+    "channel": "RBB",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9wcm9wbGFuXzEwMDg1MTgwMV9nYW56ZVNlbmR1bmc": {
+    "title": "Abgehauen",
+    "channel": "NDR",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9zZW5kdW5nLzI4MjA0MC80MjgxNzMtNDA4NjQz": {
+    "title": "Verlockung",
+    "channel": "MDR",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy84MWVkNWRlYS1hN2JjLTQwNjMtOGIzZS1hZWE4MmQ4MDIwZmQ": {
+    "title": "Boxhagener Platz",
+    "channel": "MDR",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZTUzNDk0YjktM2QyMS00MjhkLWI4NjYtNWM1ODkyZTk5ZGUy": {
+    "title": "Burton und Taylor",
+    "channel": "ONE",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNjUzMTU": {
+    "title": "Landesschau Baden-Württemberg vom 16.11.2026",
+    "channel": "SWR",
+    "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9jNzI5MjE0Mi0xYjc1LTRlNDItYWZiZi03ZGRmNzJiZmYxMzBfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 16.11.2026",
+    "channel": "RBB",
+    "first_seen": "2026-11-17"
   }
 }
