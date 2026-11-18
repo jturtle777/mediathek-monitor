@@ -10998,5 +10998,20 @@
     "title": "Zielfahnder - Blutiger Tango",
     "channel": "ARD",
     "first_seen": "2026-11-17"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9kNjhiNGZiMC04YmE0LTQyNjUtODk1Yi1mMWRhZDM4NWJmNjFfZ2FuemVTZW5kdW5n": {
+    "title": "Schweigen (Gebärdensprache)",
+    "channel": "NDR",
+    "first_seen": "2026-11-18"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9hNDY1MWQzMC0xZjY5LTQzNmEtOTQyZS05Y2JmYmEyNWE5NTBfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 17.11.2026",
+    "channel": "RBB",
+    "first_seen": "2026-11-18"
+  },
+  "https://www.zdf.de/filme/ein-ticket-zur-bescherung-movie-100": {
+    "title": "Ein Ticket zur Bescherung",
+    "channel": "ZDF",
+    "first_seen": "2026-11-18"
   }
 }
