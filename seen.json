@@ -11108,5 +11108,50 @@
     "title": "Landesschau Baden-Württemberg vom 17.11.2026",
     "channel": "SWR",
     "first_seen": "2026-11-19"
+  },
+  "https://www.zdf.de/video/magazine/zdfheute-live-102/dreiergipfel-china-weltordnung-video-100": {
+    "title": "Dreiergipfel mit Trump, Putin und Xi",
+    "channel": "ZDF",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.zdfheute.de/politik/deutschland/lanz-weber-europaparlament-rehbein-remmo-clan-100.html": {
+    "title": "Manfred Weber weist Vorwurf der Doppelmoral von Union zurück",
+    "channel": "ZDF",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzgxNjQ5MWNiLTM3MTUtNDM0My05NGIwLWY1ZWFjNzJmMmIwNl9nYW56ZVNlbmR1bmc": {
+    "title": "Arlington Road",
+    "channel": "ARD",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzE4OWEyMzM4LWM2MzEtNDMxNS1hZTgyLWJhZjdmMDY5NzE1OV9nYW56ZVNlbmR1bmc": {
+    "title": "Fang des Tages | Brokenwood – Mord in Neuseeland",
+    "channel": "ARD",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-18-november-2026-100": {
+    "title": "Markus Lanz vom 18. November 2026 (S2026/E128)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.zdfheute.de/panorama/kriminalitaet/aktenzeichen-xy-november-2026-angriff-paar-lippstadt-100.html": {
+    "title": "Paar in Lippstadt angegriffen - Fahndung nach zweitem Täter",
+    "channel": "ZDF",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzkxNzc2ZjY2LTI3OTAtNDhjNi05MjI3LThkMDBjNzNkZjRiNF9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Das Lied der Tochter | Wolfsland",
+    "channel": "ARD",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.zdf.de/filme/better-watch-out-movie-100": {
+    "title": "Better Watch Out",
+    "channel": "ZDFneo",
+    "first_seen": "2026-11-19"
+  },
+  "https://www.zdf.de/filme/wenn-du-nach-dem-tod-erwachst-movie-100": {
+    "title": "Wenn du nach dem Tod erwachst (Englisch)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-19"
   }
 }
