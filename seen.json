@@ -11203,5 +11203,40 @@
     "title": "Und dann steht einer auf und öffnet das Fenster",
     "channel": "ARD",
     "first_seen": "2026-11-20"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzE3NjQ1NDY": {
+    "title": "Tagundnachtgleiche",
+    "channel": "SWR",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy85NmI3MTJjOS03ZGZmLTQ2OWEtYjNkZC1lZWEwMDA3YjYxMjA": {
+    "title": "Riverboat vom 20. November",
+    "channel": "MDR",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy8yZTRhYmU4Ni01Njk2LTRiY2YtODNlOS0wM2JkODhkZjdlODU": {
+    "title": "Die verrückten Schlagershow-Highlights (2)",
+    "channel": "MDR",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzIyZDM3MzdhLWI2ZTctNGQ0NC04NmRjLTA4MzNmNmQ3Zjc3OF9nYW56ZVNlbmR1bmc": {
+    "title": "Schattenkinder",
+    "channel": "ARD",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNjY0NTg": {
+    "title": "Landesschau Baden-Württemberg vom 20.11.2026",
+    "channel": "SWR",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl8wOWIwYjU5Ni0yM2U0LTQxMTQtOTA2OC1lNTY1ZWUwNmE0MWJfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 20.11.2026",
+    "channel": "RBB",
+    "first_seen": "2026-11-21"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-20-november-2026-tony-bauer-zu-gast-100": {
+    "title": "Volle Kanne vom 20. November 2026 (S2026/E222)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-21"
   }
 }
