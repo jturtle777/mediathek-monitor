@@ -11533,5 +11533,30 @@
     "title": "Jericho Ridge - Unter Beschuss",
     "channel": "ZDF",
     "first_seen": "2026-11-23"
+  },
+  "https://www.zdf.de/video/filme/camouflage-movie-100/camouflage-100": {
+    "title": "Camouflage",
+    "channel": "ZDF",
+    "first_seen": "2026-11-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtNGFmZjUyNDYtZTM4Ny00ODIzLWJlYjYtMTY5NDJjOWFhMjQw": {
+    "title": "Happy Birthday! Wir feiern Olli Dittrich und zwar 70 Mal",
+    "channel": "WDR",
+    "first_seen": "2026-11-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL21kci5kZS9iZWl0cmFnL2Ntcy81ZWMyOGE4ZS1jYzJjLTRjZjYtYjZiYS0yMGI1MzRiOWY1MjM": {
+    "title": "Abgründe",
+    "channel": "MDR",
+    "first_seen": "2026-11-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNjY4OTE": {
+    "title": "Landesschau Baden-Württemberg vom 23.11.2026",
+    "channel": "SWR",
+    "first_seen": "2026-11-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9kMDYwMDQ5OC02YzA3LTQxYTAtOTdhMy00ODIyNWQ0ODg5ZDVfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 23.11.2026",
+    "channel": "RBB",
+    "first_seen": "2026-11-24"
   }
 }
