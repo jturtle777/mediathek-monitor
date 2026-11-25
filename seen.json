@@ -11593,5 +11593,25 @@
     "title": "Schweigen (Gebärdensprache)",
     "channel": "NDR",
     "first_seen": "2026-11-24"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3dkci5kZS9CZWl0cmFnLXNvcGhvcmEtZTZhMDA0NmEtODAwMS00YjVlLWExZGQtNjQzZTVjMDJiODdi": {
+    "title": "maischberger am 24.11.2026",
+    "channel": "WDR",
+    "first_seen": "2026-11-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3N3ci5kZS9hZXgvbzIzNjcxNjQ": {
+    "title": "Landesschau Baden-Württemberg vom 24.11.2026",
+    "channel": "SWR",
+    "first_seen": "2026-11-25"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL3JiYl9iZGUzZmY0Zi1jOGU2LTQ1OWQtYjZjMi00MWFiYzEzNDk3NmJfcHVibGljYXRpb24": {
+    "title": "DER TAG in Berlin & Brandenburg vom 24.11.2026",
+    "channel": "RBB",
+    "first_seen": "2026-11-25"
+  },
+  "https://www.zdf.de/video/magazine/volle-kanne-104/volle-kanne-vom-24-november-2026-mit-heinz-rudolf-kunze-100": {
+    "title": "Volle Kanne vom 24. November 2026 (S2026/E224)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-25"
   }
 }
