@@ -11753,5 +11753,25 @@
     "title": "Volle Kanne vom 26. November 2026 (S2026/E226)",
     "channel": "ZDF",
     "first_seen": "2026-11-27"
+  },
+  "https://www.zdfheute.de/politik/deutschland/lanz-reform-grundgesetz-brosius-gersdorf-100.html": {
+    "title": "Brosius-Gersdorf: Sozialer Aufstieg nicht mehr möglich",
+    "channel": "ZDF",
+    "first_seen": "2026-11-27"
+  },
+  "https://www.zdf.de/video/talk/markus-lanz-114/markus-lanz-vom-26-november-2026-102": {
+    "title": "Markus Lanz vom 26. November 2026 (S2026/E132)",
+    "channel": "ZDF",
+    "first_seen": "2026-11-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL2FyZC5kZS9wbGFuQVJEXzIyZDM3MzdhLWI2ZTctNGQ0NC04NmRjLTA4MzNmNmQ3Zjc3OF9nYW56ZVNlbmR1bmcvYXVkaW9kZXNrcmlwdGlvbg": {
+    "title": "Schattenkinder",
+    "channel": "ARD",
+    "first_seen": "2026-11-27"
+  },
+  "https://www.ardmediathek.de/video/Y3JpZDovL25kci5kZS9kNjhiNGZiMC04YmE0LTQyNjUtODk1Yi1mMWRhZDM4NWJmNjFfZ2FuemVTZW5kdW5nL2F1ZGlvZGVza3JpcHRpb24": {
+    "title": "Schweigen (Gebärdensprache)",
+    "channel": "NDR",
+    "first_seen": "2026-11-27"
   }
 }
